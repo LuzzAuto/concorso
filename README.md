@@ -1,5 +1,5 @@
 # Migliorie:
-## [] PRINT (Non richiesto nel concorso)
+## [ ] PRINT (Non richiesto nel concorso)
 Nella prima pagina dove ho titolo mostra quello e dopo spazio bianco per il resto della pagina; il contenuto parte dalla pagina successive.
 I punti elenco sono brutti da mostrare. Eventualmente sostituirli con delle icone.
 Stampare i forms nelle pagine Login e Registrazione. Questi form sono important in quanto contengono informazioni importanti per l'utente.
