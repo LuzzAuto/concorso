@@ -1,0 +1,2534 @@
+:root {
+    --content-text-bg-color: #ffffff;
+    --content-text-color: #000000;
+
+    --section-bg-color: #e7e7e7;
+
+    --navbar-bg-color: #000000;
+    --navbar-text-color: #ffffff;
+
+    --header-bg-color: #000000;
+    --header-text-color: #ffffff;
+
+    --footer-bg-color: #000000;
+    --footer-text-color: #ffffff;
+
+    --link-bg-color: #000000;
+    --not-visited-link: #ffffff;
+    --visited-link: #5f62fc;
+
+    --cards-bg-color: #4e4ffa;
+    --cards-text-color: #ffffff;
+
+    --form-bg-color: #000000;
+    --form-border-input-color: #919191;
+    --form-text-color: #ffffff;
+    --form-error-text-color: #ff2910;
+    --form-success-text-color: #3cd33e;
+}
+
+* {
+    border: 0;
+    margin: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+abbr{
+    cursor: help;
+}
+
+/******************* 
+        MENU
+********************/
+
+.topNavBar{
+    background-color: var(--navbar-bg-color);
+    color: var(--navbar-text-color);
+    display: inline-flex;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.hide{
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#menu-button-container {
+    background-color: var(--form-bg-color);
+}
+
+#menu-button-container[data-hidden="false"] {
+    position: absolute;
+    margin: -9999em;
+}
+
+h1.hide{
+    background-image: url("../img/Logo/bianco-scritta.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-left: 1em;
+}
+
+.topNavBar #disable{
+    pointer-events: none;
+}
+
+#menu{
+    list-style: none;
+    margin-left: auto;
+    display: inline-flex;
+    flex-direction: row;
+}
+
+#menu a{
+    padding: 0 1.2em;
+    text-align: center;
+}
+
+#menu #here {
+    text-decoration: none;
+    pointer-events: none;
+    background-color: var(--content-text-bg-color);
+    color: var(--content-text-color);
+    border-radius: 1em;
+    padding: 0.4em 0.6em;
+}
+
+/******************* 
+     BREADCRUMB
+********************/
+
+#breadcrumb {
+    color: var(--navbar-text-color);
+    background-color: var(--navbar-bg-color);
+    width: 100%;
+    position:absolute;
+    top: 3.5em;
+    border-top: 1px solid var(--form-border-input-color);
+    position: absolute;
+}
+
+#breadcrumb p {
+    padding: 0.5em 0 0.5em 1em;
+}
+
+/******************* 
+    STYLE COMUNE
+********************/
+
+body {
+    background-color: var(--content-text-bg-color);
+    color: var(--content-text-color);
+    font-size: 100%;
+    font-family: "Lexend", Roboto, sans-serif;
+    line-height: 1.5em;
+    align-items: center;
+}
+
+a {
+    color: var(--not-visited-link);
+    text-underline-offset: 0.3em;
+}
+
+a:visited {
+    color: var(--visited-link);
+    text-underline-offset: 0.3em;
+}
+
+select,
+select option {
+    cursor: pointer;
+}
+
+/* CHECKBOX CUSTOM Sì/No */
+/* Nascondi l'input checkbox */
+.interruttore input[type="checkbox"] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Slider dell'interruttore */
+.interruttore-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: -1.8em -11.5em 1.8em 11.5em;
+    background-color: #ccc;
+    border-radius: 25px;
+    transition: background-color 0.3s;
+    border: solid 1px black;    /* Per migliore visibilità */
+}
+
+/* Manopola dell'interruttore */
+.interruttore-knob {
+    position: relative;
+    height: 21px;
+    width: 21px;
+    background-color: white;
+    border-radius: 50%;
+    top: 48%;
+    left: 1px;
+    transform: translateY(-50%);
+    transition: transform 0.3s;
+    border: solid 1px black;    /* Per migliore visibilità */
+}
+
+/* Stato Checked */
+.interruttore input[type="checkbox"]:checked + .interruttore-slider {
+    background-color: #4caf50; /* Colore quando attivo */
+}
+
+.interruttore input[type="checkbox"]:checked + .interruttore-slider .interruttore-knob {
+    transform: translate(25px, -50%);
+}
+
+/* Testo On/Off sulla Knob */
+.interruttore-knob::after {
+    content: 'No';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 65%;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: black;  /* Per migliore visibilità */
+}
+
+.interruttore input[type="checkbox"]:checked + .interruttore-slider .interruttore-knob::after {
+    content: 'Sì';
+}
+
+.interruttore:hover {
+    cursor: pointer;
+}
+
+.form_errors{
+    text-align: center;
+    margin-top: 1em;
+    color: var(--form-error-text-color);
+}
+
+.form_success{
+    text-align: center;
+    margin-top: 1em;
+    color: var(--form-success-text-color);
+}
+
+.form_success a{
+    color: var(--not-visited-link);
+    text-underline-offset: 0.3em;
+}
+
+.form_success a:visited{
+    color: var(--visited-link);
+    text-underline-offset: 0.3em;
+}
+
+/*#region Login*/
+/******************* 
+        LOGIN
+********************/
+
+#login_body{
+    background-image: url(../img/Background/area-personale.webp);
+    background-repeat: no-repeat;
+    background-color: white;
+    background-size: cover;
+}
+
+.login_content{
+    background-color: var(--form-bg-color);
+    color: var(--form-text-color);
+    padding: 2.5em;
+    border-radius: 1.5em;
+    margin: 15em auto auto auto;
+    box-shadow: rgba(115, 115, 115, 0.35) 0px 5px 15px;
+    width: fit-content;
+}
+
+.login_content > h1, .login_content > p{
+    text-align: center;
+}
+
+.login_content > h1{
+    margin-bottom: 1em;
+}
+
+#login_form{
+    margin: 1em 0;
+    border-radius: 1em;
+}
+
+#login_form legend{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+#login_form > fieldset{
+    display: flex;
+    flex-direction: column;
+}
+
+#login_username, #password{
+    height: 3em;
+    border-radius: 0.5em;
+    border: 1px solid var(--form-border-input-color);
+    background-color: var(--form-bg-color);
+    color: var(--navbar-text-color);
+    margin: 0 5em 2em 5em;
+    font-size: 100%;
+    font-family: "Lexend", Roboto, sans-serif;
+    padding-left: 1em;
+}
+
+#login_form label{
+    background-color: var(--form-bg-color);
+    margin-left: 6em;
+    position: absolute;
+    padding: 0 0.5em;
+}
+
+#login_label_username{
+    margin-top: -0.8em;
+    color: var(--form-border-input-color);
+}
+
+#label_password{
+    margin-top: 4.5em;
+    color: var(--form-border-input-color);
+}
+
+#accedi{
+    color: var(--form-text-color);
+    background-color: var(--form-bg-color);
+    border: 1px solid white;
+    padding: 1em 1.5em;
+    border-radius: 1.5em;
+    max-width: 10em;
+    align-self: center;
+    font-size: 100%;
+    font-family: "Lexend", Roboto, sans-serif;
+}
+
+#accedi:hover{
+    background-color: var(--form-text-color);
+    color: var(--form-bg-color);
+}
+
+/*#endregion Login*/
+
+/*#region SignIn*/
+/******************* 
+        SIGNIN
+********************/
+
+#signup_body{
+    background-image: url(../img/Background/area-personale.webp);
+    background-repeat: no-repeat;
+    background-color: white;
+    background-size:cover;
+}
+
+.signup_content{
+    background-color: var(--form-bg-color);
+    color: var(--form-text-color);
+    padding: 2.5em;
+    border-radius: 1.5em;
+    margin: 10em auto auto auto;
+    width: fit-content;
+    margin-bottom: 6em;
+    box-shadow: rgba(115, 115, 115, 0.35) 0px 5px 15px;
+}
+
+.signup_content > h1, .signup_content > p{
+    text-align: center;
+}
+
+.signup_content > h1{
+    margin-bottom: 1em;
+}
+
+#signup_form{
+    margin: 1em 0;
+    border-radius: 1em;
+}
+
+#signup_form legend{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+#signup_form fieldset{
+    display: flex;
+    flex-direction: column;
+}
+
+#signup_form fieldset .signup_input{
+    height: 3em;
+    border-radius: 0.5em;
+    border: 1px solid var(--form-border-input-color);
+    background-color: var(--form-bg-color);
+    color: var(--navbar-text-color);
+    margin: 0 5em 1em 5em;
+    font-size: 100%;
+    font-family: "Lexend", Roboto, sans-serif;
+    padding-left: 1em;
+}
+
+
+#signup_form label{
+    background-color: var(--form-bg-color);
+    margin-left: 6em;
+    padding: 0 0.5em;
+    position: relative;
+    top: 0.85em;
+    width: max-content;
+}
+
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background-color: white;
+    margin-right: 1em;
+    border-radius: 0.5em;
+}
+
+#signup_button{
+    color: var(--form-text-color);
+    background-color: var(--form-bg-color);
+    border: 1px solid white;
+    padding: 1em 1.5em;
+    border-radius: 1.5em;
+    max-width: 10em;
+    align-self: center;
+    font-size: 100%;
+    font-family: "Lexend", Roboto, sans-serif;
+}
+
+#signup_button:hover{
+    background-color: var(--form-text-color);
+    color: var(--form-bg-color);
+}
+
+/*#endregion SignIn*/
+
+/*#region TestDrive*/
+/******************* 
+     TEST DRIVE
+********************/
+
+#test_drive_header {
+    background-color: var(--navbar-bg-color);
+    padding-top: 25%;
+    padding-bottom: 20%;
+    background-image: url(../img/Background/header-testdrive.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    text-align: left;
+    background-color: var(--header-bg-color);
+    color: var(--header-text-color);
+    width: 100%;
+    color: white;
+}
+
+#test_drive_header h1{
+    font-size: 8em;
+    margin-top: -0.5em;
+    margin-bottom: 0.5em;
+    margin-left: 10%;
+    text-align: left;
+}
+
+#test_drive_header p {
+    font-size: 1.7em;
+    margin-left: 10%;
+    margin-bottom: 1.5em;
+}
+
+#test_drive_prenotaAnchor{
+    background-color: var(--form-bg-color);
+    border: 1px solid white;
+    padding: 1em 1.5em 1.35em 1.5em;
+    border-radius: 1.5em;
+    max-width: 10em;
+    font-size: 100%;
+    font-family: "Lexend", Roboto, sans-serif;
+    margin-left: 10%;
+}
+
+#test_drive_prenotaAnchor:hover{
+    background-color: var(--form-text-color);
+    color: var(--form-bg-color);
+}
+
+#test_drive_prenotaAnchor:hover:visited{
+    background-color: var(--form-text-color);
+    color: var(--visited-link);
+}
+
+#test_drive_main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+#test_drive_main section{
+    margin-top: 5em;
+}
+
+#test_drive_main p {
+    font-size: 1.15em;
+    font-weight: 300;
+}
+
+#test_drive_main > section > h3 {
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+#test_drive_main > h2{
+    margin: 3em 20% 0 20%;
+    font-size: 2em;
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.1em;
+}
+
+#test_drive_main p{
+    margin: 1.5em 20% 0 20%;
+    text-align: center;
+    max-width: 70em;
+}
+
+#test_drive_comefunziona{
+    background-color: var(--cards-bg-color);
+    color: var(--cards-text-color);
+    border-radius: 2em;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    padding: 3em 0;
+    text-align: center;
+    width: 60%;
+}
+
+#test_drive_comefunziona > h3{
+    margin-bottom: 1.5em;
+}
+
+#test_drive_comefunziona dl{
+    margin: 0 30%;
+}
+
+#test_drive_comefunziona dl dt{
+    font-size: 1.2em;
+    font-weight: 450;
+    margin-top: 2em;
+}
+
+#test_drive_comefunziona dl dd{
+    font-size: 1em;
+    font-weight: 300;
+}
+
+#test_drive_consulenti{
+    text-align: center;
+    margin: auto 20%;
+}
+
+#test_drive_consulenti > img{
+    border-radius: 1em 0 1em 0;
+    height: 35%;
+    width: 35%;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+#test_drive_consulenti > h3{
+    margin-bottom: 1em;
+}
+
+#test_drive_consulenti > p{
+    margin: auto 2em;
+    font-size: 1.15em;
+    font-weight: 300;
+}
+
+#test_drive_prenota{
+    text-align: center;
+    background-color: var(--form-bg-color);
+    color: var(--form-text-color);
+    border-radius: 2em 0 2em 0;
+    width: 80%;
+    margin-bottom: 4em;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+    padding-bottom: 3em;
+}
+
+#test_drive_prenota > h3{
+    margin-top: 2em;
+}
+
+#test_drive_prenota > p{
+    margin-top: 2em;
+    font-size: 1.15em;
+    margin-bottom: 2em;
+    font-weight: 300;
+}
+
+#test_drive_form > fieldset{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width:30%;
+    border: 1px solid white;
+    border-radius: 1em;
+}
+
+#test_drive_form > fieldset > legend{
+    padding: 0 0.5em;
+}
+
+.test_drive_input{
+    height: 3em;
+    border-radius: 0.5em;
+    border: 1px solid var(--form-border-input-color);
+    background-color: var(--form-bg-color);
+    color: var(--navbar-text-color);
+    margin: 0 5em 2em 5em;
+    font-size: 100%;
+    font-family: "Lexend", Roboto, sans-serif;
+    padding-left: 1em;
+}
+
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+    background-color: white;
+    margin-right: 1em;
+    border-radius: 0.5em;
+}
+
+#test_drive_prenotaBtn{
+    color: var(--form-text-color);
+    background-color: var(--form-bg-color);
+    border: 1px solid white;
+    border-radius: 1.5em;
+    align-self: center;
+    font-size: 100%;
+    font-family: "Lexend", Roboto, sans-serif;
+    padding: 1em;
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+#test_drive_prenotaBtn:hover{
+    background-color: var(--form-text-color);
+    color: var(--form-bg-color);
+}
+
+#test_drive_label {
+    color: var(--form-border-input-color);
+    background-color: var(--form-bg-color);
+    padding: 0 0.5em;
+    position: relative;
+    margin-left: 5.7em;
+    top: 0.5em;
+    width: max-content;
+}
+
+#test_drive_prenota > a{
+    background-color: var(--form-bg-color);
+    border: 1px solid white;
+    padding: 1em 1.5em 1.35em 1.5em;
+    border-radius: 1.5em;
+    font-size: 100%;
+    font-family: "Lexend", Roboto, sans-serif;
+}
+
+#test_drive_prenota > a:hover{
+    background-color: var(--form-text-color);
+    color: var(--form-bg-color);
+}
+#test_drive_prenota > a:hover:visited{
+    background-color: var(--form-text-color);
+    color: var(--visited-link);
+}
+
+/*#endregion TestDrive*/
+
+/*#region About us*/
+/*******************
+        ABOUT US
+********************/
+
+/* HEADER */
+
+#aboutUs_header {
+    padding-top: 20%;
+    padding-bottom: 20%;
+    background-image: url("../img/Background/header-dark.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    background-color: var(--header-bg-color);
+    color: var(--header-text-color);
+    width: 100%;
+}
+
+#aboutUs_header > h1{
+    font-size: 8em;
+    margin-top: -0.5em;
+    margin-bottom: 0.5em;
+}
+
+#aboutUs_header > p {
+    font-size: 1.7em;
+}
+
+#aboutUs_header > h2 {
+    margin-top: 4em;
+    font-size: 4em;
+}
+
+#aboutUs_header > .aboutUs_text {
+    text-align: right;
+    margin-right: 12%;
+}
+
+/* MAIN */
+
+#aboutUs_main {
+    text-align: center;
+    width: 100%;
+}
+
+#aboutUs_main h2 {
+    font-size: 2.7em;
+    margin-top: 2em;
+    font-weight: 500;
+}
+
+#aboutUs_luzzauto, #aboutUs_dreamToReal, #aboutUs_unique, 
+#aboutUs_mobility, #aboutUs_future, #aboutUs_outNums, 
+#aboutUs_reachUs, #aboutUs_ourTeam{
+    width: 80%;
+}
+
+/* ---- HISTORY ---- */
+
+section.aboutUs_history {
+    line-height: 1.8em;
+    display: inline-block;
+    flex-direction: row;
+    margin-top: 8em;
+}
+
+section.aboutUs_history h3 {
+    margin-bottom: 0.5em;
+}
+
+section.aboutUs_history > img {
+    object-fit: contain;
+    border-radius: 0.5em;
+}
+
+section.aboutUs_history h3 {
+    font-weight: 450;
+    font-size: 1.8em;
+}
+
+section.aboutUs_history p {
+    font-weight: 300;
+    font-size: 1.15em;
+}
+
+/** LUZZAUTO **/
+
+#aboutUs_luzzauto {
+    text-align: center;
+    margin-top: 2.5em;
+}
+
+/** DREAMTOREAL **/
+
+#aboutUs_dreamToReal {
+    text-align: center;
+}
+
+#aboutUs_dreamToReal img {
+    float: none;
+    width: 50em;
+    margin-bottom: 2em;
+    box-shadow: 0em 0.5em 1em grey;
+}
+
+/** UNIQUE **/
+
+#aboutUs_unique {
+    text-align: left;
+}
+
+#aboutUs_unique img {
+    margin-right: 4em;
+    float: left;
+    width: 30em;
+    box-shadow: -1em 1em 1em lightgray;
+}
+
+/** MOBILITY **/
+
+#aboutUs_mobility {
+    text-align: left;
+}
+
+#aboutUs_mobility img {
+    float: right;
+    margin-left: 4em;
+    width: 35em;
+    box-shadow: 1em 1em 1em lightgray;
+}
+
+/** FUTURE **/
+
+#aboutUs_future {
+    text-align: center;
+    margin-bottom: 4em;
+}
+
+#aboutUs_future p {
+    max-width: 50em;
+    margin: 0 auto;
+}
+
+/* ---- NUMS ---- */
+
+#aboutUs_ourNums {
+    text-align: center;
+    background-color: var(--section-bg-color);
+    width: 100%;
+    padding: 1em 0 5em 0;
+}
+
+#aboutUs_ourNums h2 {
+    margin-bottom: 2em;
+    padding-bottom: 2em;
+}
+
+#aboutUs_ourNums > dl {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 4em;
+    row-gap: 12em;
+    grid-template-areas: 
+    "a b c"
+    "d e f";
+}
+
+#aboutUs_ourNums > dl dt {
+    position: relative;
+    font-size: 1.6em;
+    font-weight: 450;
+}
+
+#aboutUs_ourNums > dl dt::before {
+    content: "";
+    position: absolute;
+    top: -4em;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3em;
+    height: 3em;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#aboutUs_ourNums > dl dd {
+    margin-top: 1.5em;
+    font-size: 1.3em;
+    font-weight: 350;
+}
+
+#aboutUs_ourNums .aboutUs_soldCars {
+    grid-area: a;
+}
+
+#aboutUs_ourNums dt.aboutUs_soldCars::before {
+    background-image: url("../img/Icons/car/icona_auto.png");
+}
+
+#aboutUs_ourNums .aboutUs_custSat {
+    grid-area: b;
+}
+
+#aboutUs_ourNums dt.aboutUs_custSat::before {
+    background-image: url("../img/Icons/thumb/icona_pollice.png");
+}
+
+#aboutUs_ourNums .aboutUs_yearsExp {
+    grid-area: c;
+}
+
+#aboutUs_ourNums dt.aboutUs_yearsExp::before {
+    background-image: url("../img/Icons/exp/icona_exp.png");
+}
+
+#aboutUs_ourNums .aboutUs_savedEmiss {
+    grid-area: d;
+}
+
+#aboutUs_ourNums dt.aboutUs_savedEmiss::before {
+    background-image: url("../img/Icons/co2/icona_co2.png");
+}
+
+#aboutUs_ourNums .aboutUs_testDrives {
+    grid-area: e;
+}
+
+#aboutUs_ourNums dt.aboutUs_testDrives::before {
+    background-image: url("../img/Icons/wheel/icona_wheel.png");
+}
+
+#aboutUs_ourNums .aboutUs_warranty {
+    grid-area: f;
+}
+
+#aboutUs_ourNums dt.aboutUs_warranty::before {
+    background-image: url("../img/Icons/warranty/icona_warranty.png");
+}
+
+/* ---- LOCATION ---- */
+
+#aboutUs_reachUs{
+    border-radius: 3em;
+    margin-top: 4em;
+    display: inline-block;
+    text-align: center;
+    width: 70%;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+    background-color: var(--form-bg-color);
+    color: var(--form-text-color);
+    line-height: 1.7em;
+    padding-bottom: 1.5em;
+}
+
+#aboutUs_reachUs h2 {
+    margin: 1em 2em 1em ;
+}
+
+#aboutUs_reachUs h3 {
+    font-size: 1.6em;
+}
+
+#aboutUs_reachUs p {
+    margin: 1em 2em 1em;
+    font-size: 1.15em;
+    font-weight: 300;
+}
+
+#aboutUs_reachUs img {
+    margin: 3em 7em;
+    border-radius: 0.5em;
+}
+
+/* ---- OUR TEAM ---- */
+
+#aboutUs_ourTeam {
+    display: inline-block;
+    text-align: center;
+    background-image: url("../img/Pictures/Luzzauto/interni.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    padding: 5em 0;
+    margin-top: 2em;
+}
+
+#aboutUs_ourTeam > dl {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "a b"
+    "c d";
+    row-gap: 5em;
+    column-gap: 8em;
+    margin: 0 7em;
+}
+
+#aboutUs_ourTeam > dl > div {
+    display: block;
+    background-color: rgb(212, 207, 207);
+    overflow: hidden;
+    border-radius: 0.5em;
+    margin: 0 auto 0;
+    max-width: 45em;
+    padding: 1em;
+}
+
+#aboutUs_ourTeam > dl > div:hover {
+    background-color: var(--cards-bg-color);
+    color: var(--cards-text-color);
+}
+
+#aboutUs_ourTeam dl div img {
+    float: left;
+    height: 12vw;
+    width: 12vw;
+    margin-right: 2em;
+    border-radius: 0.5em;
+}
+
+#aboutUs_ourTeam > dl > div > dt {
+    text-align: center;
+    margin-top: 1em;
+    font-size: 1.3em;
+    font-weight: 450;
+}
+
+#aboutUs_ourTeam > dl > div > dd {
+    margin-top: 1em;
+    margin-right: 1em;
+    font-weight: 300;
+    margin-left: 1em;
+}
+
+#aboutUs_ourTeam #aboutUs_fbellon {
+    grid-area: a;
+}
+
+#aboutUs_ourTeam #aboutUs_frighetto {
+    grid-area: b;
+}
+
+#aboutUs_ourTeam #aboutUs_fdiviesti {
+    grid-area: c;
+}
+
+#aboutUs_ourTeam #aboutUs_eartusi {
+    grid-area: d;
+}
+
+/*#endregion About us*/
+
+/*#region Listino*/
+/******************* 
+    LISTINO
+********************/
+
+#list_main {
+    background-image: none;    /* Immagine di sfondo eventualmente */
+    background-color: white;
+    width: 100%;
+}
+
+.list_sectionTitle {
+    font-weight:450;
+    font-size: 1.8em;
+    text-align: center;
+    margin: 1em;
+}
+
+/* FILTRO */
+
+#list_filter {
+    background-color: var(--form-bg-color);
+    color: var(--form-text-color);
+    margin: 8em auto 0;
+    padding: 2%;
+    border-radius: 1em;
+    font-size: 100%;
+    box-shadow: rgba(115, 115, 115, 0.35) 0px 5px 15px;
+    width: 55em;
+ }
+
+#list_toggle_button {
+    position: absolute;
+    margin: -9999em;
+}
+
+#list_filter form {
+    margin: 1em 0;
+}
+
+#list_filter #list_filter_preferences {
+    flex-wrap: nowrap;
+}
+
+#list_filter fieldset {
+    padding: 0 0.5em;
+    display: flex;
+
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1em;
+
+    flex: 1 1 calc(33.333% - 1em);
+    box-sizing: border-box;
+}
+
+#list_filter legend {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 1.5em;
+    padding-top: 2em;
+    font-size: 100%;
+}
+
+#list_filter .input-container {
+    position: relative;
+}
+
+#list_filter label {
+    background-color: var(--form-bg-color);
+    color: var(--form-border-input-color);
+    position: relative;
+    padding: 0 0.5em;
+    font-size: 100%;
+    top: 0.85em;
+    left: 1em;
+}
+
+#list_filter #list_filter_marca,
+#list_filter #list_filter_modello,
+#list_filter #list_filter_colore,
+#list_filter #list_filter_alimentazione,
+#list_filter #list_filter_cambio,
+#list_filter #list_filter_potenzaMin,
+#list_filter #list_filter_potenzaMax,
+#list_filter #list_filter_pesoMin,
+#list_filter #list_filter_pesoMax,
+#list_filter #list_filter_trazione,
+#list_filter #list_filter_condizione,
+#list_filter #list_filter_prezzo,
+#list_filter #list_filter_chilometraggio {
+    width: 100%;
+    padding: 0.5em;
+    box-sizing: border-box;
+}
+
+#list_filter #list_filter_anno {
+    width: 8em;
+    padding: 0.5em;
+    box-sizing: border-box;
+}
+
+#list_filter #list_filter_posti {
+    width: 10em;
+    padding: 0.5em;
+    box-sizing: border-box;
+}
+
+#list_filter #list_filter_neopatentati,
+#neopatentatiAdmin {
+    width: 13em;
+    margin-top: 1.5em;
+}
+
+#list_filter #list_filter_neopatentati .interruttore,
+#neopatentatiAdmin .interruttore {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+    padding: 0;
+    top: 0.2em;
+}
+
+#list_filter #list_label_neopatentati,
+#labelNeopatentatiAdmin {
+    align-self: center;
+    padding: 0;
+}
+
+
+#list_filter .list_insert {
+    height: 3em;
+    border-radius: 0.5em;
+    border: 1px solid var(--form-border-input-color);
+    background-color: var(--form-bg-color);
+    color: var(--form-text-color);
+    font-family: "Lexend", Roboto, sans-serif;
+    padding-left: 1em;
+    font-size: 100%;
+}
+
+/*
+#list_filter .list_insert .placeholder {
+    color: var(--form-bg-color);
+}
+
+PER METTERE IL PLACEHOLDER DI COLORE GRIGIO NEI SELECT
+
+#list_filter .list_insert option[selected],
+#list_filter .list_insert:focus option[selected],
+#list_filter .list_insert option[disabled],
+#list_filter .list_insert:focus option[disabled] {
+    color: var(--form-border-input-color);
+}
+
+/* in realtà servirebbe 
+
+// Aggiungiamo un controllo ai select
+document.querySelectorAll('#list_filter .list_insert').forEach(select => {
+    // Funzione per aggiornare lo stile
+    function updateSelectStyle() {
+        if (select.value === "") {
+            select.classList.add('placeholder');
+        } else {
+            select.classList.remove('placeholder');
+        }
+    }
+
+    // Eseguiamo il controllo all'avvio
+    updateSelectStyle();
+
+    // Aggiungiamo un evento per rilevare i cambiamenti
+    select.addEventListener('change', updateSelectStyle);
+});
+
+*/
+
+#list_filter #list_filter_buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.list_button {
+    margin: 3em auto 0;
+    color: var(--form-text-color);
+    background-color: var(--form-bg-color);
+    border: 1px solid white;
+    padding: 1em 1.5em;
+    border-radius: 1.5em;
+    max-width: 10em;
+    font-size: 100%;
+    font-family: "Lexend", Roboto, sans-serif;
+    transition: 
+        background-color 0.3s ease, 
+        color 0.3s ease, 
+        border-radius 0.3s ease;
+}
+
+.list_button:hover {
+    background-color: var(--form-text-color);
+    color: var(--form-bg-color);
+    cursor: pointer;
+}
+
+/* ELENCO */
+
+#list {
+    width: 100%;
+}
+
+#list .list_sectionTitle {
+    font-size: 4em;
+}
+
+#list_car_list {
+    display: flex;
+    flex-wrap: wrap; /* Permette di andare a capo se lo spazio finisce */
+    gap: 1em; /* Distanza tra i riquadri */
+    justify-content: center; /* Allinea gli elementi a sinistra */
+}
+
+p.list_car_list_empty {
+    text-align: center;
+    color: #000000;
+    font-size: 2em;
+}
+
+.list_car_item {
+    width: 42em; /* Larghezza fissa */
+    height: 20em; /* Altezza fissa */
+    background-color: white; /* Sfondo bianco */
+    color: black; /* Testo nero */
+    border: 1px solid black; /* Bordo sottile nero */
+    border-radius: 0; /* Angoli a 90 gradi */
+    box-sizing: border-box; /* Include il bordo nella larghezza/altezza */
+    padding: 1em; /* Spaziatura interna */
+    overflow: hidden; /* Evita fuoriuscite */
+    transition:  /* Effetto di transizione */
+        background-color 0.3s ease,
+        border-radius 0.3s ease;
+    display: flex; /* Disposizione orizzontale delle colonne */
+    position: relative;
+}
+
+.list_car_item:hover {
+    background-color: black; /* Sfondo nero */
+    color: white; /* Testo bianco */
+    border-radius: 1em; /* Angoli arrotondati */
+}
+
+.list_car_item .list_car_item_link {
+    position: absolute;
+    right: 0.5em;
+    bottom: 0.5em;
+    background-color: black;
+    border: 1px solid white;
+    padding: 0.7em;
+    border-radius: 1em;
+}
+
+.list_car_item .list_car_image {
+    flex: 0 0 23em; /* Larghezza fissa della colonna immagine */
+    overflow: hidden; /* Evita fuoriuscite */
+    border-radius: 0; /* Angoli a 90 gradi */
+    transition:  /* Effetto di transizione */
+        border-radius 0.3s ease,
+        transform 10s ease;
+    text-align: center;     /* Centra il testo alt */
+}
+
+.list_car_item:hover .list_car_image {
+    border-radius: 1em; /* Angoli arrotondati */
+}
+
+.list_car_item .list_car_image img {
+    height: 100%; /* Altezza massima */
+    width: 100%; /* Larghezza massima */
+    object-fit: cover; /* Immagine copre tutto lo spazio */
+    transition: transform 0.1s ease-out;
+    transform: scale(1); /* Ingrandisce l'immagine */
+}
+
+.list_car_item:hover .list_car_image img {
+    transition: transform 1s ease-out;
+    transform: scale(1.05); /* Ingrandisce l'immagine */
+}
+
+.list_car_item .list_car_info {
+    flex: 1; /* Occupa lo spazio rimanente */
+    padding: 1em;
+    transition: color 0.3s ease;
+}
+
+.list_car_item .list_car_info dt {
+    font-weight: bold;
+    padding-top: 0.3em;
+}
+
+.list_car_item .list_car_info dd {
+    font-size: 150%;
+    font-weight: 300;
+}
+
+/*#endregion Listino*/
+
+/*#region Auto*/
+/******************* 
+        AUTO
+********************/
+
+#details {
+    margin: 8em auto auto auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 80%;
+}
+
+#details #details_box {
+    width: 200em;
+}
+
+#details #details_box #details_box_carousel {
+    height: 21em;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+
+#details #details_box #details_box_carousel img {
+    max-width: 5em;
+    transition: transform 0.3s ease, border-radius 0.3s ease;
+    transform-origin: bottom center; /* L'ingrandimento parte dal basso */
+}
+
+#details #details_box #details_box_carousel img:hover {
+    transform: scale(4);
+    border-radius: 0.1em;
+    background-color: var(--content-text-bg-color);
+}
+
+#details #details_box p {
+    text-align: center;
+}
+
+#details_box #details_box_info p {
+    background-color: black;
+    color: white;
+    margin: 0.75em;
+    padding: 0.5em;
+    border-radius: 1em 0;
+}
+
+
+#details #details_box #details_box_info {
+    margin-top: 1em;
+}
+
+#details #details_box #details_box_info dl {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 0.9em;
+}
+
+#details dt {
+    font-weight: bold;
+    padding-top: 0.3em;
+}
+
+#details dd {
+    font-size: 150%;
+    font-weight: 300;
+    margin-bottom: 0.5em;
+}
+
+#details #details_buttons {
+    background-color: var(--form-bg-color); /* Sfondo nero */
+    color: var(--cards-text-color); /* Testo bianco */
+    border: 1px solid black; /* Bordo sottile nero */
+    border-radius: 1em; /* Angoli arrotondati */
+    width: 80em; /* Larghezza fissa */
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1em;
+    margin-top: 1em;
+    position: sticky;
+}
+
+#details #details_buttons .list_button {
+    padding: 0.5em;
+    margin: 0.2em;
+    align-self: center;
+    text-align: center;
+}
+
+#details #details_buttons .list_button:hover {
+    color: var(--content-text-color);
+}
+
+#details #details_buttons .list_button:visited {
+    color: var(--visited-link);
+}
+
+/*#endregion Auto*/
+
+/*#region Home*/
+/******************* 
+        HOME
+********************/
+
+/* HEADER */
+
+#home_header {
+    padding-top: 20%;
+    padding-bottom: 20%;
+    background-image: url("../img/Background/header-dark.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    background-color: var(--header-bg-color);
+    color: var(--header-text-color);
+    width: 100%;
+}
+
+#home_header h1{
+    font-size: 8em;
+    margin-top: -0.5em;
+    margin-bottom: 0.5em;
+}
+
+#home_header p {
+    font-size: 1.7em;
+}
+
+#home_header h2 {
+    margin-top: 4em;
+    font-size: 4em;
+}
+
+#home_header .home_header_text {
+    text-align: right;
+    margin-right: 12%;
+}
+
+/* SECTIONS */
+
+.home_sectionTitle {
+    font-weight: 600;
+    font-size: 1.8em;
+    text-align: center;
+    margin: 1em;
+}
+
+/* ---- FAST SEARCH ---- */
+
+#home_fastSearch {
+    background-color: var(--form-bg-color);
+    color: var(--form-text-color);
+    display: flex;
+    flex-direction: column;
+    margin: -8em auto 0;
+    padding: 3em;
+    border-radius: 1em;
+    font-size: 100%;
+    box-shadow: rgba(115, 115, 115, 0.35) 0px 5px 15px;
+    width: 35em;
+}
+
+#home_fastSearch .home_sectionTitle {
+    font-weight: 450;
+}
+
+#home_fastSearch form {
+    margin: 1em 0;
+}
+
+#home_fastSearch fieldset {
+    padding: 0 0.5em;
+}
+
+#home_fastSearch legend {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 1.5em;
+    padding-top: 2em;
+    font-size: 100%;
+}
+
+#home_fastSearch label {
+    background-color: var(--form-bg-color);
+    color: var(--form-border-input-color);
+    position: absolute;
+    padding: 0 0.5em;
+    font-size: 100%;
+}
+
+#home_fastSearch label#home_label_marca,
+#home_fastSearch #home_label_condizione {
+    margin-top: -0.85em;
+    margin-left: 1em;
+}
+
+#home_fastSearch #home_marca,
+#home_fastSearch #home_condizione {
+    float: left;
+}
+
+#home_fastSearch label#home_label_modello,
+#home_fastSearch #home_label_prezzo {
+    margin-top: -0.85em;
+    margin-left: 8em;
+}
+
+#home_fastSearch #home_modello,
+#home_fastSearch #home_prezzoMax {
+    float: right;
+}
+
+#home_fastSearch #home_condizione {
+    padding-right: 0.8em;
+    width: 44%;
+    text-align: center;
+}
+
+#home_fastSearch #home_condizione option:disabled {
+    color: var(--form-border-input-color);
+}
+
+#home_fastSearch #home_label_prezzo {
+    margin-left: 6.5em;
+}
+
+#home_fastSearch .home_insert {
+    height: 3em;
+    border-radius: 0.5em;
+    border: 1px solid var(--form-border-input-color);
+    background-color: var(--form-bg-color);
+    color: var(--form-text-color);
+    font-family: "Lexend", Roboto, sans-serif;
+    padding-left: 1em;
+    font-size: 100%;
+}
+
+#home_fastSearch input::placeholder {
+    color: var(--form-border-input-color);
+}
+
+#home_fastSearch #home_cerca {
+    display: block;
+    margin: 3em auto 0;                            /* con questo e display: block riesco ad allinearlo a centro */
+    color: var(--form-text-color);
+    background-color: var(--form-bg-color);
+    border: 1px solid white;
+    padding: 1em 1.5em;
+    border-radius: 1.5em;
+    max-width: 10em;
+    font-size: 100%;
+    font-family: "Lexend", Roboto, sans-serif;
+}
+
+#home_fastSearch #home_cerca:hover {
+    background-color: var(--form-text-color);
+    color: var(--form-bg-color);
+    cursor: pointer;
+}
+
+/* ---- NEW CARS ---- */
+ 
+#home_new {
+    padding: 2em 0 6em;
+    margin: 5em 0;
+    text-align: center;
+    background-color: rgb(223, 223, 223);
+    width: 100%;
+}
+
+#home_new h3 {
+    font-size: 2.7em;
+}
+
+#home_new .home_car_item {
+    margin: 4em 3em 0;
+    display: inline-block;
+    border: 0px solid black;
+    border-radius: 1.5em;
+    overflow: hidden;
+    max-width: 25em;
+    height: fit-content;
+    text-align: center;
+    padding: 0 0 1em;
+    font-size: 100%;
+    background-color: var(--content-text-bg-color);
+}
+
+#home_new .home_car_item:hover {
+    transform: scale(1.2);
+    transition-duration: 0.5s;
+}
+
+#home_new .home_car_item:not(:hover) {
+    transform: scale(1);
+    transition-duration: 0.5s;
+}  
+
+#home_new .home_car_item div {
+    font-weight:450;
+    font-size: 1.3em;
+    padding: 0.5em 0 1em;
+    background-color: var(--navbar-bg-color);
+    color: var(--navbar-text-color);
+}
+
+#home_new .home_car_item p {
+    padding: 0.5em 1em 1em;
+    font-weight: 300;
+    font-size: 1.1em;
+    background-color: var(--content-text-bg-color);
+}
+
+#home_new img {
+    object-fit: cover;
+    width: 100%;
+    display: block;
+}
+
+/* ---- WORK WITH US ---- */
+
+#home_workWithUs {
+    background-color: var(--form-bg-color);
+    color: var(--form-text-color);
+    display: block;
+    margin: 3em auto 5em;
+    padding: 3em;
+    border-radius: 3em 0;
+    font-size: 100%;
+    width: 50%;
+    text-align: center;
+    line-height: 1.8em;
+}
+
+#home_workWithUs h3 {
+    margin-bottom: 1em;
+    font-size: 2em;
+    font-weight: 450;
+}
+
+#home_workWithUs h4 {
+    margin-bottom: 2em;
+    font-size: 1.5em;
+    font-weight: 400;
+}
+
+#home_workWithUs p {
+    font-size: 1.2em;
+    font-weight: 300;
+}
+
+#home_workWithUs #home_workWithUs_email {
+    color: var(--not-visited-link);
+}
+
+#home_workWithUs #home_workWithUs_email:visited {
+    color: var(--visited-link);
+}
+
+/* ---- HOME BRANDS ---- */
+
+#home_brands {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    background-color: #8c8cff;
+    padding: 2em 0 4em;
+}
+
+#home_brands h3 {
+    font-size: 2.7em;
+}
+
+#home_brands #home_brands_container {
+    display: inline-block;
+    margin-top: 2em;
+}
+
+#home_brands img {
+    object-fit: contain;
+    width: 15em;
+    vertical-align: middle;
+    margin: 0 2em;
+    border-radius: 50%;
+    padding-top: 1em;
+}
+
+#home_brands img#home_audi,
+#home_brands img#home_opel {
+    border-radius: 0;
+}
+
+/* ---- CLIENT REVIEWS ---- */
+
+#home_reviews {
+    padding: 2em 0;
+    margin: 5em 0;
+    text-align: center;
+    width: 100%;
+    display: block;
+}
+
+#home_reviews h3 {
+    font-size: 2.7em;
+}
+
+#home_reviews > dl#home_clients_reviews {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 2em;
+}
+
+#home_reviews dl div.home_review_item {
+    /*
+    margin: 4em 3em 0;
+    display: inline-block;
+    */
+    margin: 4em 3em 0;
+    border: 0px solid black;
+    border-radius: 1.5em;
+    max-width: 25em;
+    height: fit-content;
+    font-size: 100%;
+    background-color: rgb(223, 223, 223);
+    color: var(--content-text-color);
+    position: relative;
+}
+
+#home_reviews div.home_review_item:hover {
+    background-color: var(--cards-bg-color);
+    color: var(--cards-text-color);
+}
+
+#home_reviews dl dt {
+    font-weight:450;
+    font-size: 1.3em;
+    margin-bottom: 0.5em;
+    position: relative;
+    padding-top: 2.5em;
+}
+
+#home_reviews dl dt::before {
+    content: "";
+    position: absolute;
+    top: -2.5em;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4em;
+    height: 4em;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    background-image: url("../img/Users/default.svg");
+    background-color: white;
+}
+
+#home_reviews dl dd {
+    padding: 0 1em 6em;
+    font-weight: 300;
+    font-size: 1.1em;
+    position: relative;
+}
+
+#home_reviews dl dd::after {
+    content: "";
+    position: absolute;
+    bottom: 1em;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4em;
+    height: 4em;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("../img/Icons/star/icona_star.png");
+}
+/*#endregion Home*/
+
+/*#region Utente*/
+/******************* 
+        UTENTE
+********************/
+#utente_body{
+    background-image: url(../img/Background/area-personale.webp);
+    background-repeat: repeat-y;
+    background-color: white;
+    background-size:cover;
+}
+
+#utente_content{
+    background-color: var(--navbar-bg-color);
+    color: var(--navbar-text-color);
+    padding: 2em;
+    border-radius: 1.5em;
+    margin: 8em auto auto auto;
+    width: 50em;
+    height: auto;
+    position: relative;
+}
+
+#utente_content > h1{
+    text-align: center;
+}
+
+#utente_logout{
+    position: relative;
+    top: -1em;
+    left: 43em;
+    background-color: var(--form-bg-color);
+    border: 1px solid white;
+    padding: 0.3em 1.5em 0.5em 1.5em;
+    border-radius: 1.5em;
+    max-width: 10em;
+    font-size: 100%;
+    font-family: "Lexend", Roboto, sans-serif;
+}
+
+#utente_logout:hover{
+    background-color: var(--form-text-color);
+    color: var(--form-bg-color);
+}
+
+#utente_logout:hover:visited{
+    background-color: var(--form-text-color);
+    color: var(--visited-link);
+}
+
+.riquadriUtente{ 
+    border-radius: 0.5em;
+    border: 1px solid var(--form-border-input-color);
+    background-color: var(--navbar-bg-color);
+    color: var(--navbar-text-color);
+    margin: 0 3em 2em 3em;
+    padding-left: 1em;
+    margin-top: 3em;
+    padding: 2em; 
+}
+
+#userImage{
+    float: right; 
+    width: 10em;
+    height: 10em;
+    background-size: cover; 
+    background-position: center;
+    margin-top: -1.5em; 
+}
+
+.riquadriUtente dt{
+    color: var(--form-border-input-color);
+    float: left; 
+}
+
+.riquadriUtente dd{
+    margin-bottom: 0.5em;
+}
+
+.nomeRiqUtente{
+    background-color: var(--navbar-bg-color);
+    margin-left: 1em;
+    position: absolute;
+    padding: 0 0.5em;
+    margin-top: -1.9em;
+    font-weight: bold;
+    font-size: 1.6em;
+    color: var(--form-border-input-color);
+}
+
+/*tabella prenotazioni*/
+.nomeRiqPrenUtente{
+    text-align: center;
+    color: var(--form-border-input-color);
+    font-weight: bold;
+    font-size: 1.6em;
+}
+
+
+#prenotazioni_utente {
+    margin-top: 3em;
+    overflow-y: auto; /* make the table scrollable if height is more than 200 px  */
+    height: 15em;
+    width: 85%;
+    margin: auto;/* gives an initial height of 200px to the table */
+}
+#prenotazioni_utente thead th{
+    position: sticky; /* make the table heads sticky */
+    top: 1.45em; /* table head will be placed from the top of the table and sticks to it */
+}
+
+#prenotazioni_utente caption{
+    position: sticky; /* make the table heads sticky */
+    top: 0;
+    background-color: var(--header-bg-color);
+}
+
+#prenotazioni_utente table {
+    border-collapse: collapse; /* make the table borders collapse to each other */
+    width: 100%;
+}
+#prenotazioni_utente th,td {
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+}
+#prenotazioni_utente th {
+    background: var(--cards-bg-color);
+}
+
+
+
+.tabellaPrenUtente {
+    width: calc(100% - 6em); /* 100% meno il padding a sinistra e a destra */
+    border-collapse: collapse;
+    margin: 1em auto; 
+}
+
+.tabellaPrenUtente thead {
+    background-color: var(--cards-bg-color);
+    color: var(--cards-text-color);
+}
+
+.tabellaPrenUtente th, .tabellaPrenUtente td {
+    text-align: left;
+    padding: 0.8em;
+    border: 1px solid var(--form-border-input-color);
+}
+
+.tabellaPrenUtente date{
+    display: block;
+}
+
+#descTable{
+    position: absolute;
+    left: -999em;
+}
+
+#prenIndispUtente{
+    margin-top: 0.4em;
+    margin-left: 4.7em;
+}
+
+.accettatoUtente{
+    color: var(--form-success-text-color);
+}
+
+.rifiutatoUtente{
+    color: var(--form-error-text-color);
+}
+
+/*gestione prenotazioni*/
+
+#labelPrenUtente{
+    position: absolute;
+    display: block;
+    margin-left: 0.7em;
+    margin-top: 1.2em;
+    color: var(--form-border-input-color);
+    background-color: var(--navbar-bg-color);
+    padding: 0 0.3em;
+}
+
+#gestPrenUtente{
+    width: 100%; 
+    padding: 0.8em; 
+    border: 1px solid var(--form-border-input-color); 
+    border-radius: 5px; 
+    margin-top: 2em;
+    background-color:black;
+    color: var(--form-border-input-color); 
+    font-size: 1em;
+    cursor: pointer;
+    color: white; 
+    height: 3em;
+}
+
+#eliminaPrenUtente{
+    display: flex;
+    margin: auto;
+    margin-top: 1em;
+    padding: 0.5em 2em;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 20px;
+    background-color: black;
+    border: 1px solid white;
+}
+
+#eliminaPrenUtente:hover{
+    background-color: white;
+    color: black;
+}
+
+/*#endregion Utente*/
+
+
+/*#region ModificaUtente*/
+/******************* 
+  Modifica Utente
+********************/
+
+#modUtente_body{
+    background-image: url(../img/Background/area-personale.webp);
+    background-repeat: no-repeat;
+    background-color: white;
+    background-size:cover;
+}
+
+#modUtente_content{
+    background-color: var(--form-bg-color);
+    color: var(--form-text-color);
+    padding: 2.5em;
+    border-radius: 1.5em;
+    margin: 10em auto auto auto;
+    width: fit-content;
+    margin-bottom: 6em;
+    box-shadow: rgba(115, 115, 115, 0.35) 0px 5px 15px;
+}
+
+#modUtente_content > h1, #modUtente_content > p{
+    text-align: center;
+}
+
+#modUtente_content > h1{
+    margin-bottom: 1em;
+}
+
+#modUtente_form{
+    margin: 1em 0;
+    border-radius: 1em;
+}
+
+#modUtente_form legend{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+#modUtente_form fieldset{
+    display: flex;
+    flex-direction: column;
+}
+
+#modUtente_form fieldset .modUtente_input{
+    height: 3em;
+    border-radius: 0.5em;
+    border: 1px solid var(--form-border-input-color);
+    background-color: var(--form-bg-color);
+    color: var(--navbar-text-color);
+    margin: 0 5em 1em 5em;
+    font-size: 100%;
+    font-family: "Lexend", Roboto, sans-serif;
+    padding-left: 1em;
+}
+
+
+#modUtente_form label{
+    background-color: var(--form-bg-color);
+    margin-left: 6em;
+    padding: 0 0.5em;
+    position: relative;
+    top: 0.85em;
+    width: max-content;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background-color: white;
+    margin-right: 1em;
+    border-radius: 0.5em;
+}
+
+#modUtente_button{
+    color: var(--form-text-color);
+    background-color: var(--form-bg-color);
+    border: 1px solid white;
+    padding: 1em 1.5em;
+    border-radius: 1.5em;
+    max-width: 20em;
+    align-self: center;
+    font-size: 100%;
+    font-family: "Lexend", Roboto, sans-serif;
+}
+
+#modUtente_button:hover{
+    background-color: var(--form-text-color);
+    color: var(--form-bg-color);
+}
+
+/*#endregion ModificaUtente*/
+
+
+
+/*#region Amministratore*/
+/******************* 
+    AMMINISTRATORE  
+********************/
+
+#admin_body{
+    background-image: url(../img/Background/area-personale.webp);
+    background-repeat: repeat-y;
+    background-color: white;
+    background-size:cover;
+}
+
+#admin_content{
+    background-color: var(--navbar-bg-color);
+    color: var(--navbar-text-color);
+    padding: 2em;
+    border-radius: 1.5em;
+    margin: 8em auto auto auto;
+    width: 50em;
+    height: auto;
+    position: relative;
+}
+
+#admin_content > h1{
+    text-align: center;
+}
+
+#admin_logout{
+    position: relative;
+    top: -1em;
+    left: 43em;
+    background-color: var(--form-bg-color);
+    border: 1px solid white;
+    padding: 0.3em 1.5em 0.5em 1.5em;
+    border-radius: 1.5em;
+    max-width: 10em;
+    font-size: 100%;
+    font-family: "Lexend", Roboto, sans-serif;
+}
+
+#admin_logout:hover{
+    background-color: var(--form-text-color);
+    color: var(--form-bg-color);
+}
+
+#admin_logout:hover:visited{
+    background-color: var(--form-text-color);
+    color: var(--visited-link);
+}
+
+.riquadriAdmin{ 
+    border-radius: 0.5em;
+    border: 1px solid var(--form-border-input-color);
+    background-color: var(--navbar-bg-color);
+    color: var(--navbar-text-color);
+    margin: 0 3em 2em 3em;
+    font-size: 100%;
+    font-family: "Lexend", Roboto, sans-serif;
+    padding-left: 1em;
+    margin-top: 3em;
+    padding: 2em; 
+}
+
+.nomeRiqAdmin{
+    background-color: var(--navbar-bg-color);
+    margin-left: 1em;
+    position: absolute;
+    padding: 0 0.5em;
+    margin-top: -1.9em;
+    color: var(--form-border-input-color);
+}
+    
+.nomeRiqPrenAdmin{
+    color: var(--form-border-input-color);
+    font-size: 1.6em;
+    font-weight: 600;
+    margin-bottom: 0.7em;
+}
+
+.prenAdmin {
+    overflow-y: auto; /* make the table scrollable if height is more than 200 px  */
+    height: 25em;
+    width: 85%;
+    margin: auto; /* gives an initial height of 200px to the table */
+}
+.prenAdmin thead th{
+    position: sticky; /* make the table heads sticky */
+    top: 1.5em; /* table head will be placed from the top of the table and sticks to it */
+}
+
+.prenAdmin caption{
+    position: sticky; /* make the table heads sticky */
+    top: 0; /* table head will be placed from the top of the table and sticks to it */
+    background-color: var(--header-bg-color);
+}
+
+.prenAdmin table {
+    border-collapse: collapse; /* make the table borders collapse to each other */
+    width: 100%;
+}
+.prenAdmin th,td {
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+}
+.prenAdmin th {
+    background: var(--cards-bg-color);
+}
+
+
+/* tabella prenotazione */
+.tabellaPrenAdmin {
+    width: calc(100% - 6em); /* 100% meno il padding a sinistra e a destra */
+    border-collapse: collapse;
+    margin: 1em auto;
+}
+
+.tabellaPrenAdmin thead {
+    background-color: var(--cards-bg-color);
+    color: var(--cards-text-color);
+}
+
+.tabellaPrenAdmin th, .tabellaPrenAdmin td {
+    text-align: left;
+    padding: 0.8em;
+    border: 1px solid var(--form-border-input-color);
+}
+
+.tabellaPrenAdmin date{
+    display: block;
+}
+
+.tabellaPrenAdmin td#prenIndispAdmin {
+    text-align: center;
+    color: var(--navbar-text-color);
+    background-color: var(--navbar-bg-color);
+}
+
+/*Gestione prenotazione*/
+#admin_content legend{
+    font-size: 1.6em;
+    font-weight: 600;
+}
+
+#labelPrenAdmin, #labelAzioneAdmin{
+    position: absolute;
+    display: block;
+    margin-left: 0.7em;
+    margin-top: 1.2em;
+    color: var(--form-border-input-color);
+    background-color: var(--navbar-bg-color);
+    padding: 0 0.3em;
+}
+
+#gestPrenAdmin, #azioneAdmin{
+    width: 100%; 
+    padding: 0.8em;
+    border: 1px solid var(--form-border-input-color); 
+    border-radius: 5px; 
+    background-color:black; 
+    color: var(--form-border-input-color); 
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 2em;
+    color: white;
+    height: 3em;
+}
+
+#inviaAzioneAdmin{
+    display: flex;
+    margin: auto;
+    margin-top: 1em;
+    padding: 0.5em 2em;
+    color: white;
+    font-size: 1em;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: black;
+    border: 1px solid white;
+}
+
+#inviaAzioneAdmin:hover{
+    background-color: white;
+    color: black;
+}
+
+/*Aggiungi Automobile*/
+
+#labelMarcaAdmin, #labelModelloAdmin, #labelAnnoAdmin, #labelColoreAdmin,
+#labelAlimAdmin, #labelCambioAdmin, #labelTrazioneAdmin, #labelPotenzaAdmin, 
+#labelPesoAdmin, #labelPostiAdmin, #labelCondizioniAdmin, #labelChilometriAdmin,
+#labelPrezzoAdmin, #labelimmagineOutAdmin, #labelimmagineInAdmin,
+#labelAltImmagineOutAdmin, #labelAltImmagineInAdmin {
+    position: absolute;
+    display: block;
+    margin-left: 0.7em;
+    margin-top: 1.2em;
+    color: var(--form-border-input-color);
+    background-color: var(--navbar-bg-color);
+    padding: 0 0.3em;
+}
+
+#labelAltImmagineOutAdmin, #labelAltImmagineInAdmin {
+    margin-top: 0.8em;
+}
+
+#labelNeopatentatiAdmin, #neopatentatiAdmin {
+    display: inline-block;
+    color: var(--form-border-input-color);
+    background-color: var(--navbar-bg-color);
+}
+
+#marcaAdmin, #modelloAdmin, #annoAdmin, #coloreAdmin, #alimentazioneAdmin, 
+#cambioAdmin, #trazioneAdmin, #potenzaAdmin, #pesoAdmin, #numero_postiAdmin, 
+#condizioneAdmin, #chilometraggioAdmin, #prezzoAdmin, 
+#altImmagineOutAdmin, #altImmagineInAdmin {
+    width: 100%;
+    padding: 0.8em;
+    border: 1px solid var(--form-border-input-color);
+    border-radius: 5px;
+    background-color: black;
+    color: var(--form-border-input-color);
+    font-size: 1em;
+    color: var(--form-border-input-color);
+    height: auto;
+    box-sizing: border-box; 
+    margin-top: 2em;
+    color: white;
+}
+
+#aggiungiAutoFormAdmin select {
+    height: 3em;
+}
+
+#altImmagineOutAdmin, #altImmagineInAdmin {
+    resize: none;
+}
+
+#neopatentatiAdmin .interruttore {
+    top: 0;
+    margin-left: 1em;
+}
+
+#immagineOutAdmin, #immagineInAdmin{
+    width: fit-content;
+    padding: 0.8em;
+    color: var(--form-border-input-color);
+    font-size: 1em;
+    color: var(--form-border-input-color);
+    height: auto;
+    box-sizing: border-box;
+    margin-top: 2em;
+    color: white;
+}
+
+#aggiungiAutoAdmin {
+    display: block;
+    margin: 3em auto 0;
+    padding: 0.5em 2em;
+    color: white;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 20px;
+    background-color: black;
+    border: 1px solid white;
+}
+
+#aggiungiAutoAdmin:hover{
+    background-color: white;
+    color: black;
+}
+
+/*Elimina Auto*/
+
+#labelEliminaAutoAdmin{
+    position: absolute;
+    display: block;
+    margin-left: 0.7em;
+    margin-top: 1.2em;
+    color: var(--form-border-input-color);
+    background-color: var(--navbar-bg-color);
+    padding: 0 0.3em;
+}
+
+#eliminaAutoAdmin{
+    width: 100%; 
+    padding: 0.8em; 
+    border: 1px solid var(--form-border-input-color); 
+    border-radius: 5px; 
+    margin-top: 2em;
+    background-color:black;
+    color: var(--form-border-input-color); 
+    font-size: 1em;
+    cursor: pointer;
+    color: white; 
+    height: 3em;
+}
+
+#eliminaButtonAdmin{
+    display: flex;
+    margin: auto;
+    margin-top: 1em;
+    padding: 0.5em 2em;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 20px;
+    background-color: black;
+    border: 1px solid white;
+}
+
+#eliminaButtonAdmin:hover{
+    background-color: white;
+    color: black;
+}
+
+/*PAGINA ELIMINAZIONE UTENTE (STESSO CSS LOGIN)*/
+#label_password_elim{
+    margin-top: -0.6em;
+    color: var(--form-border-input-color);
+}
+
+/*#endregion Amministratore*/
+
+/* FOOTER */
+
+footer {
+    margin-top: 2em;
+    background-color: var(--navbar-bg-color);
+    color: var(--navbar-text-color);
+    display: inline-block;
+    text-align: center;
+    padding: 1em 0;
+    width: 100%;
+}
+
+footer.shortPageFooter {
+   margin: 7em auto 0;
+}
+
+footer p {
+    display: inline-block;
+    margin: auto 1em;
+}
+
+footer img {
+    border: 0;
+    width: 88px;
+    height: 31px;
+}
+
+/*#region Pagine d'errore*/
+.errors_main {
+    margin: 8em;
+    height: max-content;
+    text-align: center;
+    line-height: 3em;
+    background-color: black;
+    color: var(--navbar-text-color);
+    padding: 2em;
+    border-radius: 2em 0em;
+}
+
+.errors_main p {
+    line-height: 1.5em;
+}
+
+.errors_main img {
+    border-radius: 1em;
+}
+
+/******************* 
+    SKIP TO CONTENT  
+********************/
+.header_help{
+    width: 100%;
+    text-align: center;
+    padding-top: 2em;
+}
+
+.aHelp {
+    position: absolute;
+    text-indent: -999em;
+    background-color: var(--navbar-bg-color);
+}
+
+.aHelp:focus {
+    position: absolute;
+    text-indent: 0;
+    margin: auto;
+    top: 7em;
+    left: 1em;
+    background-color: var(--navbar-bg-color);
+    width: auto;
+    text-align: left;
+}
+
+.navHelp ul {
+    list-style-type: none;
+}

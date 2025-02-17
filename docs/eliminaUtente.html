@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+
+    <title>Eliminazione Profilo | LuzzAuto Concessionario</title>
+    <link rel="icon" href="assets/img/Logo/icona.webp" type="image/x-icon">
+
+    <meta name="description" content="Elimina il tuo account personale per non usufruire più dei nostri servizi!">
+    <meta name="keywords" content="luzzauto, concessionario, macchina, auto, automobili, guida, vetture, test, account, elimina">
+    <meta name="author" content="Artusi Emanuele, Bellon Filippo, Diviesti Filippo, Righetto Filippo">
+
+    <link rel="stylesheet" media="screen and (max-width:1024px)" href="assets/css/mobile.css" type="text/css">
+    <link rel="stylesheet" media="screen and (min-width:1025px)" href="assets/css/desktop.css" type="text/css">
+    <link rel="stylesheet" media="print" href="assets/css/print.css" type="text/css">
+
+    <script src="assets/js/toggle.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
+    </head>
+    <body id="login_body">
+
+        <header>
+            <nav aria-label="aiuti alla navigazione" class="navHelp">
+                <ul>
+                    <li>
+                        <a href="#del_main" class="aHelp">Vai alla eliminazione del profilo</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <nav class="topNavBar">
+
+            <h1 class="hide">LuzzAuto</h1>
+            
+            <button id="menu-button-container" aria-label="Seleziona per espandere e comprimere il menù di navigazione" data-hidden="false">               
+                <span class="menu-button-bar1" aria-hidden="true"></span>
+                <span class="menu-button-bar2" aria-hidden="true"></span>
+                <span class="menu-button-bar3" aria-hidden="true"></span>
+            </button>
+            <ul id="menu"  aria-label="Menù del sito">
+                <li><a href="index.php"><span lang="en-GB">Home</span></a></li>
+                <li><a href="about.html">Chi siamo</a></li>
+                <li><a href="listino.php">Listino auto</a></li>
+                <li><a href="test_drive.html"><span lang="en-GB">Test drive</span></a></li>
+                <li><a href="utente.php" tabindex="-1" id="here">Area riservata</a></li>
+            </ul>
+        </nav>
+
+        <nav id="breadcrumb" aria-label="Percorso attuale nel sito">
+            <p>Ti trovi in: <span lang="en-GB">Eliminazione profilo</span></p>
+        </nav>
+
+        <main class="login_content" id="del_main">
+
+            <h1>Eliminazione del profilo</h1>
+            <p>Inserisci la tua <span lang="en-GB">password</span> per confermare l'eliminazione</p>
+
+            <form id="login_form" method="post" action="eliminaUtente.php">
+                <fieldset>
+                    <legend>Elimina il tuo profilo</legend>
+                    <label id="label_password_elim" for="password"><span lang="en-GB">Password</span></label>
+                    <input type="password" name="password" id="password" required data-msg-required="Per favore, inserisci la tua password" value="[password]" placeholder="Minimo 8 caratteri">
+    
+                    <input id="accedi" type="submit" value="Elimina profilo">
+                </fieldset>
+            </form>
+
+            <p>Se hai cambiato idea allora <a href="utente.html">ANNULLA L'OPERAZIONE</a>.</p>
+
+            <div class="form_errors">
+                [err]
+            </div>
+
+        </main>
+        <footer>
+            <p><a href="https://validator.w3.org/nu/"><img style="border:0;width:88px;height:31px" src="https://www.w3.org/Icons/valid-xhtml10" alt="HTML Valido!"></a></p>
+            <p>FFF&E <span lang="en-GB">Company</span> - <span lang="en-GB">All rights Reserved</span> - Alcuni marchi e modelli sono frutto della nostra immaginazione; le immagini relative sono state generate da strumenti di intelligenza artificiale.</p>
+            <p><a href="http://jigsaw.w3.org/css-validator/check/referer"><img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="CSS Valido!"></a></p>
+        </footer>
+    </body>
+</html>

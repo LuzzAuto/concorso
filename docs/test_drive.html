@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+
+    <title>Test drive | LuzzAuto Concessionario</title>
+    <link rel="icon" href="assets/img/Logo/icona.webp" type="image/x-icon">
+
+    <meta name="description" content="Scegli l'auto che più ti piace e salici a bordo prenotando un test di guida!">
+    <meta name="keywords" content="luzzauto, concessionario, macchina, auto, automobili, guida, vetture, test, prenota">
+    <meta name="author" content="Artusi Emanuele, Bellon Filippo, Diviesti Filippo, Righetto Filippo">
+
+    <link rel="stylesheet" media="screen and (max-width:1024px)" href="assets/css/mobile.css" type="text/css">
+    <link rel="stylesheet" media="screen and (min-width:1025px)" href="assets/css/desktop.css" type="text/css">
+    <link rel="stylesheet" media="print" href="assets/css/print.css" type="text/css">
+
+    <script src="assets/js/toggle.js"></script>
+    <script src="assets/js/back_to_origin.js"></script>
+    <script src="assets/js/form_validation_tool.js"></script>
+    <script src="assets/js/form_validation_test_drive.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+
+        <header id="test_drive_header">
+
+            <nav aria-label="aiuti alla navigazione" class="navHelp">
+                <ul>
+                    <li>
+                        <a href="#test_drive_main" class="aHelp">Vai al contenuto</a>
+                    </li>
+                    <li>
+                        <a href="#test_drive_prenota" class="aHelp">Passa alla prenotazione</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <h1><span lang="en-GB">Test drive</span></h1>
+            <p>Non immaginare, vivi: guida il cambiamento con noi!</p>
+            <a id="test_drive_prenotaAnchor" href="#test_drive_prenota">Prenota</a>
+        </header>
+
+        <nav class="topNavBar">
+
+            <h1 class="hide">LuzzAuto</h1>
+            
+            <button id="menu-button-container" aria-label="Seleziona per espandere e comprimere il menù di navigazione" data-hidden="false">               
+                <span class="menu-button-bar1" aria-hidden="true"></span>
+                <span class="menu-button-bar2" aria-hidden="true"></span>
+                <span class="menu-button-bar3" aria-hidden="true"></span>
+            </button>
+            <ul id="menu"  aria-label="Menù del sito">
+                <li><a href="index.php"><span lang="en-GB">Home</span></a></li>
+                <li><a href="about.html">Chi siamo</a></li>
+                <li><a href="listino.php">Listino auto</a></li>
+                <li><a href="test_drive.html" tabindex="-1" id="here"><span lang="en-GB">Test drive</span></a></li>
+                <li><a href="utente.php">Area riservata</a></li>
+            </ul>
+        </nav>
+
+        <nav id="breadcrumb" aria-label="Percorso attuale nel sito">
+            <p>Ti trovi in: <span lang="en-GB">Test drive</span></p>
+        </nav>
+
+        <main id="test_drive_main">
+
+            <h2>Prova su strada - <span lang="en-GB">Test drive</span> con LuzzAuto</h2>
+            <p>Scopri il piacere di guidare il tuo prossimo veicolo con il nostro esclusivo servizio di <span lang="en-GB">Test Drive</span>. Presso LuzzAuto, ti offriamo 
+                l'opportunità di provare la tua auto preferita per capire davvero se è quella giusta per te.</p>
+
+            <section id="test_drive_comefunziona">
+
+                <h3>Come funziona il nostro servizio di <span lang="en-GB">Test Drive</span>?</h3>
+
+                <dl>
+                    <dt>Scegli il modello</dt>
+                    <dd>Visita il nostro sito o passa in concessionario per scegliere tra un'ampia gamma di veicoli disponibili per il <span lang="en-GB">Test Drive</span>.</dd>
+
+                    <dt>Prenota un appuntamento</dt>
+                    <dd>Fissa un appuntamento comodamente <span lang="en-GB">online</span> o direttamente in concessionario. Saremo lieti di trovare l'orario più adatto alle tue esigenze.</dd>
+
+                    <dt>Prova su strada</dt>
+                    <dd>Vieni in concessionario all'orario concordato. Ti accoglieremo con tutte le informazioni necessarie e ti accompagneremo nella prova su strada.</dd>
+                </dl>
+
+            </section>
+
+            <section id="test_drive_consulenti">
+
+                <h3>Perché scegliere il nostro servizio di <span lang="en-GB">Test Drive</span>?</h3>
+                <img src="assets/img/Content/testdrive-consulente.webp" alt="Foto futuristica di un consulente a lavoro nel concessionario LuzzAuto">
+                <p>I nostri consulenti saranno al tuo fianco per rispondere a tutte le tue domande e offrirti consigli utili su un'ampia scelta di veicoli. Tutte le auto sono accuratamente 
+                    igienizzate e controllate prima di ogni prova su strada, per garantire una guida serena e sicura.</p>
+
+            </section>
+
+            <section id="test_drive_prenota">
+                <h3>Prenota ora il tuo <span lang="en-GB">Test Drive</span></h3>
+                [formORbuttons]
+            </section>
+        </main>
+        <footer>
+            <p><a href="https://validator.w3.org/nu/"><img src="https://www.w3.org/Icons/valid-xhtml10" alt="HTML Valido!"></a></p>
+            <p>FFF&E & <span lang="en-GB">Company</span> - <span lang="en-GB">All rights Reserved</span> - Alcuni marchi e modelli sono frutto della nostra immaginazione; le immagini relative sono state generate da strumenti di intelligenza artificiale.</p>
+            <p><a href="http://jigsaw.w3.org/css-validator/check/referer"><img src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="CSS Valido!"></a></p>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+
+        <title>Home | LuzzAuto Concessionario</title>
+        <link rel="icon" href="assets/img/Logo/icona.webp" type="image/x-icon">
+
+        <link rel="stylesheet" media="screen and (max-width:1024px)" href="assets/css/mobile.css" type="text/css">
+        <link rel="stylesheet" media="screen and (min-width:1025px)" href="assets/css/desktop.css" type="text/css">
+        <link rel="stylesheet" media="print" href="assets/css/print.css" type="text/css">
+
+        <script src="assets/js/toggle.js"></script>
+        <script src="assets/js/form_validation_tool.js"></script>
+        <script src="assets/js/form_validation_index.js"></script>
+
+        <meta name="description" content="Visita il nostro concessionario e rimani aggiornato sulle nuove vetture disponibili e prenotare un test di guida con la tua macchina dei sogni.">
+        <meta name="keywords" content="luzzauto, concessionario, macchina, auto, automobili, guida, vetture, test">
+        <meta name="author" content="Artusi Emanuele, Bellon Filippo, Diviesti Filippo, Righetto Filippo">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+      
+        <header id="home_header">
+
+            <nav aria-label="aiuti alla navigazione" class="navHelp">
+                <ul>
+                    <li>
+                        <a href="#home_main" class="aHelp">Vai alla ricerca rapida</a>
+                    </li>
+                    <li>
+                        <a href="#home_new" class="aHelp">Vai al contenuto</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <h1 class="home_header_text">LuzzAuto</h1>
+            <p class="home_header_text">Vendiamo, noleggiamo, innoviamo</p>
+            <h2 class="home_header_text"><span lang="en-GB">Home</span></h2>
+        </header>
+
+        <nav class="topNavBar">
+
+            <h1 class="hide">LuzzAuto</h1>
+            
+            <button id="menu-button-container" aria-label="Seleziona per espandere e comprimere il menù di navigazione" data-hidden="false">               
+                <span class="menu-button-bar1" aria-hidden="true"></span>
+                <span class="menu-button-bar2" aria-hidden="true"></span>
+                <span class="menu-button-bar3" aria-hidden="true"></span>
+            </button>
+            <ul id="menu"  aria-label="Menù del sito">
+                <li><a href="index.php" id="here"><span lang="en-GB">Home</span></a></li>
+                <li><a href="about.html">Chi siamo</a></li>
+                <li><a href="listino.php">Listino auto</a></li>
+                <li><a href="test_drive.html"><span lang="en-GB">Test drive</span></a></li>
+                <li><a href="utente.php">Area riservata</a></li>
+            </ul>
+        </nav>
+
+        <nav id="breadcrumb" aria-label="Percorso attuale del sito">
+            <p>Ti trovi in: <span lang="en-GB">Home</span></p>
+        </nav>
+
+        <main id="home_main">
+            <section id="home_fastSearch" aria-label="Sezione ricerca rapida veicolo">
+                <h2 class="home_sectionTitle">Cerchi un veicolo in particolare?</h2>
+                <form action="index.php" method="GET" id="home_fastSearch_form" aria-label="Form per filtrare rapidamente le automobili">
+                    <!-- Fieldset per info base veicolo -->
+                    <fieldset id="home_basicInfo">
+                        <legend>INFORMAZIONI SUL VEICOLO</legend>
+                        
+                        <label for="home_marca" id="home_label_marca">Marca</label>
+                        <input type="text" id="home_marca" class="home_insert" [marca] name="marca" placeholder="Es. DM, UniPD, ESU...">
+                    
+                        <label for="home_modello" id="home_label_modello">Modello</label>
+                        <input type="text" id="home_modello" class="home_insert" [modello] name="modello" placeholder="Es. Mudol, Belzuny...">
+                    </fieldset>
+                
+                    <!-- Fieldset per preferenze di acquisto -->
+                    <fieldset id="home_preferences">
+                        <legend>PREFERENZE</legend>
+                        
+                        <label for="home_condizione" id="home_label_condizione">Condizione</label>
+                        <select id="home_condizione" name="condizione" class="home_insert">
+                            <option [qualsiasiCd]value="qualsiasi">Qualsiasi</option>
+                            <option [nuovo]value="nuovo">Nuovo</option>
+                            <option [usato]value="usato">Usato</option>
+                            <option [km0]value="km0">KM 0</option>
+                        </select>
+                    
+                        <label for="home_prezzoMax" id="home_label_prezzo">Prezzo massimo (<abbr title="Euro">&euro;</abbr>)</label>
+                        <input type="number" id="home_prezzoMax" class="home_insert" [prezzoMax] name="prezzoMax" placeholder="Es. 40000">
+                    </fieldset>
+                    <input type="submit" value="Ricerca" id="home_cerca">
+                </form>
+
+                <div class = "form_errors">
+                    [err]
+                </div>
+            </section>
+
+            <section id="home_new" aria-label="Sezione esposizione nuove automobili">
+                <h3 class="home_sectionTitle">Le nostre auto del momento</h3>
+                <ul id="home_car_list">
+                    <li id="home_first_car" class="home_car_item">
+                        <img id="home_first_image" src="assets/img/Cars/DM%20-%20Digital%20Motion/mudol.webp" alt="Auto berlina blu chiaro metallizzata, quattro porte, design elegante e lineare, fari affilati">
+                        <div><a href="auto.php?id=11">DM Mudol</a></div>
+                        <p>
+                            Prestazioni mozzafiato e design aerodinamico si fondono in questa elegante berlina sportiva.
+                            Colore esclusivo blu elettrico, linee dinamiche e tecnologia all'avanguardia per un'esperienza di guida unica.
+                            Disponibile ora presso il nostro <span lang="en-GB">showroom</span>!
+                        </p>
+                    </li>
+                    <li id="home_second_car" class="home_car_item">
+                        <img id="home_second_image" src="assets/img/Cars/ESU%20-%20European%20Sports%20Unlimited/belzuny.webp" alt="Auto SUV arancione brillante, quattro porte, design grintoso, fari LED moderni, griglia prominente">
+                        <div><a href="auto.php?id=9">ESU Belzuny</a></div>
+                        <p>
+                            Unione perfetta di potenza e stile, questo SUV di lusso si distingue per il suo <span lang="en-GB">design</span> aggressivo e le prestazioni straordinarie su ogni terreno.
+                            Verniciatura esclusiva rosso metallizzato e interni di altissimo livello.
+                            Vieni a scoprirlo nel nostro <span lang="en-GB">showroom</span>!
+                        </p>
+                    </li>
+                    <li id="home_third_car" class="home_car_item">
+                        <img id="home_third_image" src="assets/img/Cars/UniPD%20-%20Universal%20Premium%20Design/planetary.webp" alt="Auto monovolume moderna elegante blu brillante, cinque porte, grandi finestrini, fari a LED">
+                        <div><a href="auto.php?id=2">UniPD Planetary</a></div>
+                        <p>
+                            Progettata per la famiglia moderna, questa monovolume <span lang="en-GB">premium</span> offre spazio, eleganza e tecnologia avanzata.
+                            Il <span lang="en-GB">design</span> raffinato in blu metallizzato e gli interni spaziosi garantiscono <span lang="en-GB">comfort</span> per ogni viaggio.
+                            Scopri l'auto perfetta per le tue esigenze nel nostro <span lang="en-GB">showroom</span>!
+                        </p>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="home_workWithUs" aria-label="Sezione lavora con noi">
+                <h2 class="home_sectionTitle">Vuoi lavorare con noi?</h2>
+                <h3>Siamo attualmente alla ricerca di nuovi talenti.</h3>
+                <p>
+                    Se vuoi unirti a noi, inviaci il tuo curriculum all'indirizzo <span lang="en-GB">email</span> 
+                    <a id="home_workWithUs_email" href="mailto:concessionario.luzzauto@gmail.com" aria-label="link invio email concessionario.luzzauto@gmail.com">concessionario.luzzauto@gmail.com</a>(mail) 
+                    o portacelo direttamente in concessionario.
+                    Ti aspettiamo.
+                </p>
+            </section>
+
+            <section id="home_brands" aria-label="Sezione i nostri brand">
+                <h2 class="home_sectionTitle">I <span lang="en-GB">brand</span> che trattiamo</h2>
+                <div id="home_brands_container">
+                    <img src="assets/img/Cars/DM%20-%20Digital%20Motion/stemma.webp" alt="Logo DM circolare, nome al centro, dettagli stilizzati di circuiti elettronici, bordatura cromata" class="stemma_brand">
+                    <img src="assets/img/Cars/ESU%20-%20European%20Sports%20Unlimited/stemma.webp" alt="Logo ESU circolare cromato, nome in basso, raffigurato un leone di profilo al centro" class="stemma_brand">
+                    <img src="assets/img/Cars/EXFiat%20-%20EXcellence%20Fiat/stemma.webp" alt="Logo EXFiat, stemma araldico con leoni dorati, scudo rosso e corona reale, nome in basso" class="stemma_brand">
+                    <img src="assets/img/Cars/UniPD%20-%20Universal%20Premium%20Design/stemma.webp" alt="Logo UniPD, emblema dorato, cavallo al centro, corona in alto, alloro attorno, nome in basso" class="stemma_brand">
+                </div>
+            </section>
+
+            <section id="home_reviews" aria-label="Sezione recensioni dei clienti">
+                <h2 class="home_sectionTitle">Cosa dicono i nostri clienti</h2>
+                <dl id="home_clients_reviews">
+                    <div id="home_first_review" class="home_review_item">
+                        <dt>Elon Muschio</dt>
+                        <dd>
+                            Esperienza eccellente grazie alla professionalit&agrave; del personale, che ha reso ogni fase semplice e piacevole.
+                            Un team davvero eccezionale!
+                        </dd>
+                    </div>
+                    <div id="home_second_review" class="home_review_item">
+                        <dt>Aldo Abbaglio</dt>
+                        <dd>
+                            Miiiiii veramente un ottimo servizio! Ho prenotato il test drive comodamente dal loro sito web.
+                            Qualche attesa in concessionaria, ma personale molto professionale.
+                            Consigliato.
+                        </dd>
+                    </div>
+                    <div id="home_third_review" class="home_review_item">
+                        <dt>Tullio</dt>
+                        <dd>
+                            Porca l'oca, un concessionario super tecnologico!
+                            Consulenti preparati, una vasta gamma di auto per ogni esigenza e tanta attenzione ai dettagli.
+                            Davvero <span lang="en-Gb">top</span>!
+                        </dd>
+                    </div>
+                </dl>
+            </section>
+        </main>
+        <footer>
+            <p><a href="https://validator.w3.org/nu/"><img src="https://www.w3.org/Icons/valid-xhtml10" alt="HTML Valido!"></a></p>
+            <p>FFF&E Co. - <span lang="en-GB">All rights Reserved</span> - Alcuni marchi e modelli sono frutto della nostra immaginazione; le immagini relative sono state generate da strumenti di intelligenza artificiale.</p>
+            <p><a href="http://jigsaw.w3.org/css-validator/check/referer"><img src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="CSS Valido!"></a></p>
+        </footer>
+    </body>
+</html>

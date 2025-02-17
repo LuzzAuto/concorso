@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+
+    <title>Amministratore | LuzzAuto Concessionario</title>
+    <link rel="icon" href="assets/img/Logo/icona.webp" type="image/x-icon">
+
+    <meta name="description" content="Gestisci le auto nel listino e visualizza una panoramica delle prenotazioni degli utenti.">
+    <meta name="keywords" content="luzzauto, concessionario, macchina, auto, automobili, guida, vetture, test, prenotazioni, gestione, panoramica">
+    <meta name="author" content="Artusi Emanuele, Bellon Filippo, Diviesti Filippo, Righetto Filippo">
+
+    <link rel="stylesheet" media="screen and (max-width:1024px)" href="assets/css/mobile.css" type="text/css">
+    <link rel="stylesheet" media="screen and (min-width:1025px)" href="assets/css/desktop.css" type="text/css">
+    <link rel="stylesheet" media="print" href="assets/css/print.css" type="text/css">
+
+    <script src="assets/js/greetings.js"></script>
+    <script src="assets/js/toggle.js"></script>
+    <script src="assets/js/form_validation_amm.js"></script>
+    <script src="assets/js/form_validation_tool.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+  </head>
+
+  <body id="admin_body">
+    <header class="header_help">
+      <nav aria-label="aiuti alla navigazione" class="navHelp">
+          <ul>
+              <li>
+                <a href="#admin_content" class="aHelp">Vai al contenuto</a>
+              </li>
+              <li>
+                <a href="#admin_logout" class="aHelp">Vai a logout</a>
+              </li>
+              <li>
+                <a href="#admin_prenotazioni" class="aHelp">Vai alle prenotazioni</a>
+              </li>
+              <li>
+                <a href="#gestionePrenotazioneFormAdmin" class="aHelp">Vai alla gestione delle prenotazioni</a>
+              </li>
+              <li>
+                <a href="#aggiungiAutoFormAdmin" class="aHelp">Vai all'aggiunta di un'auto</a>
+              </li>
+              <li>
+                <a href="#eliminaAutoFormAdmin" class="aHelp">Vai alla eliminazione di un auto</a>
+              </li>
+          </ul>
+      </nav>
+    </header>
+      
+    <nav class="topNavBar">
+      <h1 class="hide">LuzzAuto</h1>
+      <button id="menu-button-container" aria-label="Seleziona per espandere e comprimere il menù di navigazione" data-hidden="false">               
+        <span class="menu-button-bar1" aria-hidden="true"></span>
+        <span class="menu-button-bar2" aria-hidden="true"></span>
+        <span class="menu-button-bar3" aria-hidden="true"></span>
+      </button>
+      <ul id="menu"  aria-label="Menù del sito">
+          <li><a href="index.php"><span lang="en-GB">Home</span></a></li>
+          <li><a href="about.html" >Chi siamo</a></li>
+          <li><a href="listino.php" >Listino auto</a></li>
+          <li><a href="test_drive.html"><span lang="en-GB">Test drive</span></a></li>
+          <li><a href="utente.php" tabindex="-1" id="here">Area riservata</a></li>
+      </ul>
+    </nav>
+
+    <nav id="breadcrumb" aria-label="Percorso attuale nel sito">
+        <p>Ti trovi in: Amministratore</p>
+    </nav>
+
+    <main id="admin_content">
+      <h1 id="saluto">Salve</h1>
+
+      <a href="logout.php" id="admin_logout"><span lang="en-GB">Logout</span></a>
+
+      <section class="prenAdmin" id="admin_prenotazioni">
+        [campiTabella]
+      </section>
+
+      <section class="riquadriAdmin">
+          <form method="post" action="amministratore.php" id="gestionePrenotazioneFormAdmin">
+            <fieldset>
+              <legend class="nomeRiqAdmin">Gestione Prenotazioni</legend>
+
+              <label for="gestPrenAdmin" id="labelPrenAdmin">Prenotazioni:</label>
+              <select id="gestPrenAdmin" name="gestPrenAdmin" required data-msg-required='Per favore, seleziona la prenotazione'>
+                <option selected disabled>Seleziona un'opzione</option>
+                [prenotazioni]
+              </select>
+              <label for="azioneAdmin" id="labelAzioneAdmin">Azione:</label>
+              <select id="azioneAdmin" name="azioneAdmin">
+                  <option selected disabled>Seleziona un'opzione</option>
+                  <option value="accetta">Accetta</option>
+                  <option value="rifiuta">Rifiuta</option>
+              </select>
+              <input type="submit" name="inviaAzioneAdmin" value="Conferma" id="inviaAzioneAdmin">
+                
+            </fieldset>
+          </form>
+
+          <div class='form_errors'>
+            [errGest]
+          </div>
+      </section>
+
+      <section class="riquadriAdmin">
+        <form id="aggiungiAutoFormAdmin" action="amministratore.php#aggiungiAutoAdmin" method="POST" enctype="multipart/form-data">
+          <fieldset>
+
+            <legend class="nomeRiqAdmin">Aggiungi Automobile</legend>
+
+            <label for="immagineOutAdmin" id="labelimmagineOutAdmin">Immagine esterna dell'auto:</label>
+            <input type="file" id="immagineOutAdmin" name="immagineOutAdmin" required data-msg-required="Per favore, inserisci un'immagine" accept="image/*">
+            
+            <label for="altImmagineOutAdmin" id="labelAltImmagineOutAdmin">Testo alt per immagine esterno:</label>
+            <textarea rows="10" id="altImmagineOutAdmin" name="altImmagineOutAdmin" placeholder="Es. Auto berlina grigia metallizzata, quattro porte, design elegante e moderno" required data-msg-required="Per favore, inserisci un testo alternativo per l'immagine">[altOut]</textarea>
+
+            <label for="immagineInAdmin" id="labelimmagineInAdmin">Immagine interna dell'auto:</label>
+            <input type="file" id="immagineInAdmin" name="immagineInAdmin" required data-msg-required="Per favore, inserisci un'immagine" accept="image/*">
+
+            <label for="altImmagineInAdmin" id="labelAltImmagineInAdmin">Testo alt per immagine interni:</label>
+            <textarea rows="10" id="altImmagineInAdmin" name="altImmagineInAdmin" placeholder="Es. Interni di lusso con sedili in pelle marrone, finiture in legno e schermo di infotainment" required data-msg-required="Per favore, inserisci un testo alternativo per l'immagine">[altIn]</textarea>
+
+            <label for="marcaAdmin" id="labelMarcaAdmin">Marca:</label>
+            <input type="text" id="marcaAdmin" [marca] name="marcaAdmin" placeholder="Es. DM - Digital Motion" required data-msg-required="Per favore, inserisci la marca dell'auto">
+
+            <label for="modelloAdmin" id="labelModelloAdmin">Modello:</label>
+            <input type="text" id="modelloAdmin" [modello] name="modelloAdmin" placeholder="Es. Mudol" required data-msg-required="Per favore, inserisci il modello dell'auto">
+
+            <label for="annoAdmin" id="labelAnnoAdmin">Anno:</label>
+            <input type="number" id="annoAdmin" [anno] name="annoAdmin" min="1" step="1" max="2025" placeholder="Es. 2024" required data-msg-required="Per favore, inserisci l'anno dell'auto">
+
+            <label for="coloreAdmin" id="labelColoreAdmin">Colore:</label>
+            <input type="text" id="coloreAdmin" [colore] name="coloreAdmin" placeholder="Es. Nero" required data-msg-required="Per favore, inserisci il colore dell'auto">
+
+            <label for="alimentazioneAdmin" id="labelAlimAdmin">Alimentazione:</label>
+            <select id="alimentazioneAdmin" name="alimentazioneAdmin" required data-msg-required="Per favore, seleziona il tipo di alimentazione">
+              <option value="" selected disabled>Seleziona un'opzione</option>
+              <option [benzina]value="benzina">Benzina</option>
+              <option [gasolio]value="gasolio">Gasolio</option>
+              <option [elettrico]value="elettrico">Elettrico</option>
+              <option [metano]value="metano">Metano</option>
+              <option [ibrido]value="ibrido">Ibrido</option>
+            </select>
+
+            <label for="cambioAdmin" id="labelCambioAdmin">Cambio:</label>
+            <select id="cambioAdmin" name="cambioAdmin" required data-msg-required="Per favore, seleziona il tipo di cambio">
+              <option value="" selected disabled>Seleziona un'opzione</option>
+              <option [manuale]value="manuale">Manuale</option>
+              <option [automatico]value="automatico">Automatico</option>
+            </select>
+
+            <label for="trazioneAdmin" id="labelTrazioneAdmin">Trazione:</label>
+            <select id="trazioneAdmin" name="trazioneAdmin" required data-msg-required="Per favore, seleziona il tipo di trazione">
+              <option value="" selected disabled>Seleziona un'opzione</option>
+              <option [anteriore]value="anteriore">Anteriore</option>
+              <option [posteriore]value="posteriore">Posteriore</option>
+              <option [integrale]value="integrale">Integrale</option>
+            </select>
+
+            <label for="potenzaAdmin" id="labelPotenzaAdmin">Potenza (<abbr title="cavalli vapore">CV</abbr>):</label>
+            <input type="number" id="potenzaAdmin" [potenza] name="potenzaAdmin" min="1" step="1" placeholder="Es. 180" required data-msg-required="Per favore, inserisci la potenza dell'auto">
+
+            <label for="pesoAdmin" id="labelPesoAdmin">Peso (<abbr title="chilogrammi">kg</abbr>):</label>
+            <input type="number" id="pesoAdmin" [peso] name="pesoAdmin" min="1" step="1" placeholder="Es. 1200" required data-msg-required="Per favore, inserisci il peso dell'auto">
+
+            <label for="numero_postiAdmin" id="labelPostiAdmin">Numero posti:</label>
+            <input type="number" id="numero_postiAdmin" [posti] name="numero_postiAdmin" min="1" step="1" placeholder="Es. 5" required data-msg-required="Per favore, inserisci il numero di posti dell'auto">
+
+            <label for="condizioneAdmin" id="labelCondizioniAdmin">Condizione:</label>
+            <select id="condizioneAdmin" name="condizioneAdmin" required data-msg-required="Per favore, inserisci la condizione dell'auto">
+              <option value="" selected disabled>Seleziona un'opzione</option>
+              <option [nuovo]value="nuovo">Nuovo</option>
+              <option [usato]value="usato">Usato</option>
+              <option [km0]value="km0">KM 0</option>
+            </select>
+
+            <label for="chilometraggioAdmin" id="labelChilometriAdmin">Chilometraggio (<abbr title="chilometri">km</abbr>):</label>
+            <input type="number" id="chilometraggioAdmin" [chilometraggio] name="chilometraggioAdmin" min="0" step="1" placeholder="Es. 1200" required data-msg-required="Per favore, inserisci il chilometraggio dell'auto">
+            
+            <label for="prezzoAdmin" id="labelPrezzoAdmin">Prezzo (€):</label>
+            <input type="number" id="prezzoAdmin" [prezzo] name="prezzoAdmin" min="1" step="1" placeholder="Es. 40000" required data-msg-required="Per favore, inserisci il prezzo dell'auto">
+            
+            <div id="neopatentatiAdmin">
+                <label for="neopatentatiID" id="labelNeopatentatiAdmin">
+                    Idoneità neopatentati:
+                    <div class="interruttore">
+                      <input type="checkbox" name="neopatentatiAdmin" id="neopatentatiID" [neopatentati]value="1">
+                      <div class="interruttore-slider">
+                          <div class="interruttore-knob"></div>
+                      </div>
+                    </div>
+                </label>
+            </div>
+            <input type="submit" value="Aggiungi" id="aggiungiAutoAdmin" name="aggiungiAutoAdmin">
+          </fieldset>
+        </form>
+
+        <div class='form_errors'>
+          [errAdd]
+        </div>
+
+        <div class='form_success'>
+          [succAdd]
+        </div>
+      </section>
+
+      <section class="riquadriAdmin">
+        <form method="post" action="amministratore.php#eliminaButtonAdmin" id="eliminaAutoFormAdmin">
+          <fieldset>
+            <legend class="nomeRiqAdmin">Elimina Automobile</legend>
+
+            <label for="eliminaAutoAdmin" id="labelEliminaAutoAdmin">Auto:</label>
+            <select id="eliminaAutoAdmin" name="eliminaAutoAdmin" required>
+                <option selected disabled>Seleziona un'opzione</option>
+                [VeicoliDaEliminare]
+            </select>
+            <input type="submit" value="Elimina" id="eliminaButtonAdmin">
+          </fieldset>
+        </form>
+
+        <div class='form_errors'>
+          [errElim]
+        </div>
+
+        <div class='form_success'>
+            [succElim]
+        </div>
+      </section>
+
+    </main>
+    <footer>
+      <p><a href="https://validator.w3.org/nu/"><img src="https://www.w3.org/Icons/valid-xhtml10" alt="HTML Valido!"></a></p>
+      <p>FFF&E & <span lang="en-GB">Company</span> - <span lang="en-GB">All rights Reserved</span> - Alcuni marchi e modelli sono frutto della nostra immaginazione; le immagini relative sono state generate da strumenti di intelligenza artificiale.</p>
+      <p><a href="http://jigsaw.w3.org/css-validator/check/referer"><img src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="CSS Valido!"></a></p>
+    </footer>
+  </body>
+</html>

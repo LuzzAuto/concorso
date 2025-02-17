@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: php_server-8_2_26
+    restart: always
+    ports:
+      - "8080:80"
+    volumes:
+      - ..:/var/www/html
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_DATABASE: LuzzAutoDB
+      DB_USERNAME: root
+      DB_PASSWORD: root
+
+  db:
+    image: mariadb:10.11.6
+    container_name: mariadb_server-10_11_6
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: root
+      MARIADB_DATABASE: LuzzAutoDB
+      MARIADB_USER: userdb
+      MARIADB_PASSWORD: userdb
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+      - ../db-stuff/db-init:/docker-entrypoint-initdb.d
+
+  phpmyadmin:
+    image: phpmyadmin
+    container_name: phpmyadmin
+    restart: always
+    ports:
+      - 9080:80
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+
+volumes:
+  db_data:

@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&display=swap');
+
+@page {
+	margin: 1cm;
+	size: A4;
+}
+
+* {
+	font-family: "Aleo", "Times New Roman", serif;
+	line-height: 1.5em;
+	text-decoration: none;
+	color: black;
+	background-image: none;
+	break-before:avoid;
+	font-size: 1em;
+	text-align: justify;
+	break-inside: avoid;
+}
+
+#menu-button-container, #menu, form, #home_fastSearch, #list_filter, .navHelp {
+    display: none;
+}
+
+body {
+    align-items: center;
+	text-align: center;
+	margin-top: 2cm;
+}
+
+a:after {
+	content: " [" attr(href) "]";
+}
+
+.topNavBar, #breadcrumb{
+	position: absolute;
+	top:0;
+	left: 0;
+}
+
+#breadcrumb{
+	margin-top: 0.9cm;
+}
+
+img{
+	width: 25%;
+}
+
+footer {
+    text-align: center;
+    padding: 1em 0;
+    width: 100%;
+}
+
+footer  img{
+	width: 10%;
+}
+
+h1{
+	font-size: 1.6em;
+}
+
+/*IMMAGINI INUTILI*/
+#home_clients_reviews img, #aboutUs_ourNums img{
+	display: none;
+}
+
+table, td, th{
+	border: 1px solid;
+	border-collapse: collapse;
+}

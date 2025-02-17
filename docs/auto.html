@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+
+
+        <title>Dettaglio auto | LuzzAuto Concessionario</title>
+        <link rel="icon" href="assets/img/Logo/icona.webp" type="image/x-icon">
+
+        <link rel="stylesheet" media="screen and (max-width:1024px)" href="assets/css/mobile.css" type="text/css">
+        <link rel="stylesheet" media="screen and (min-width:1025px)" href="assets/css/desktop.css" type="text/css">
+        <link rel="stylesheet" media="print" href="assets/css/print.css" type="text/css">
+
+        <script src="assets/js/toggle.js"></script>
+
+        <meta name="description" content="Visualizza i dettagli dell'auto scelta e prenota un test drive.">
+        <meta name="keywords" content="luzzauto, concessionario, macchina, auto, automobili, guida, vetture, test">
+        <meta name="author" content="Artusi Emanuele, Bellon Filippo, Diviesti Filippo, Righetto Filippo">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+
+        <header class="header_help">
+            <nav aria-label="aiuti alla navigazione" class="navHelp">
+                <ul>
+                    <li>
+                        <a href="#details" class="aHelp">Vai ai dettagli</a>
+                    </li>
+                    <li>
+                        <a href="#details_buttons" class="aHelp">Vai alle informazioni</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <nav class="topNavBar">
+
+            <h1 class="hide">LuzzAuto</h1>
+            
+            <button id="menu-button-container" aria-label="Seleziona per espandere e comprimere il menù di navigazione" data-hidden="false">               
+                <span class="menu-button-bar1" aria-hidden="true"></span>
+                <span class="menu-button-bar2" aria-hidden="true"></span>
+                <span class="menu-button-bar3" aria-hidden="true"></span>
+            </button>
+            <ul id="menu"  aria-label="Menù del sito">
+                <li><a href="index.php" tabindex="-1"><span lang="en-GB">Home</span></a></li>
+                <li><a href="about.html">Chi siamo</a></li>
+                <li><a href="listino.php">Listino auto</a></li>
+                <li><a href="test_drive.html"><span lang="en-GB">Test drive</span></a></li>
+                <li><a href="utente.php">Area riservata</a></li>
+            </ul>
+        </nav>
+
+        <nav id="breadcrumb" aria-label="Percorso attuale nel sito">
+            <p>Ti trovi in: <a href="listino.php">Listino auto</a> &gt; Dettaglio auto</p>
+        </nav>
+
+        <main id="details">
+            <div id="details_box">
+                <div id="details_box_carousel">
+                    [immagini_auto]
+                </div>
+                <p tabindex="-1" aria-hidden="true">Passa il puntatore sopra un'immagine per ingrandirla</p>
+                <div id="details_box_info">
+                    [dettagli_auto]
+                </div>
+            </div>
+            <div id="details_buttons">
+                <h2>Informazioni</h2>
+                [bottoni_auto]
+                <a class="list_button" href="test_drive.php#test_drive_comefunziona">Chiedi informazioni</a>
+            </div>
+        </main>
+        <footer>
+            <p><a href="https://validator.w3.org/nu/"><img src="https://www.w3.org/Icons/valid-xhtml10" alt="HTML Valido!"></a></p>
+            <p>FFF&E & <span lang="en-GB">Company</span> - <span lang="en-GB">All rights Reserved</span> - Alcuni marchi e modelli sono frutto della nostra immaginazione; le immagini relative sono state generate da strumenti di intelligenza artificiale.</p>
+            <p><a href="http://jigsaw.w3.org/css-validator/check/referer"><img src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="CSS Valido!"></a></p>
+        </footer>
+    </body>
+</html>

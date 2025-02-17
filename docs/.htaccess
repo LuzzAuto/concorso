@@ -1,0 +1,22 @@
+ErrorDocument 404 /fbellon/404.html
+ErrorDocument 500 /fbellon/500.html
+
+RewriteCond %{HTTP_REFERER} ^$
+RewriteRule ^assets\/(.*)$ /fbellon/403.html [L,R=301]
+
+RewriteEngine On
+#Redirect dei file html ai file php corrispondenti
+RewriteRule ^auto\.html$ /fbellon/auto.php [L,R=301]
+RewriteRule ^registrazione\.html$ /fbellon/registrazione.php [L,R=301]
+RewriteRule ^login\.html$ /fbellon/login.php [L,R=301]
+RewriteRule ^test\_drive\.html$ /fbellon/test_drive.php [L,R=301]
+RewriteRule ^listino\.html$ /fbellon/listino.php [L,R=301]
+RewriteRule ^index\.html$ /fbellon/index.php [L,R=301]
+RewriteRule ^utente\.html$ /fbellon/utente.php [L,R=301]
+RewriteRule ^amministratore\.html$ /fbellon/amministratore.php [L,R=301]
+RewriteRule ^eliminaUtente\.html$ /fbellon/eliminaUtente.php [L,R=301]
+RewriteRule ^modificaUtente\.html$ /fbellon/modificaUtente.php [L,R=301]
+RewriteRule ^(.*).php/(.*)$ /fbellon/404.html [L,R=301]
+RewriteRule ^(.*).html/(.*)$ /fbellon/404.html [L,R=301]
+RewriteRule ^$ /fbellon/index.php [L,R=301]
+RewriteRule ^dbConnection\.php$ /fbellon/403.html [L,R=301]

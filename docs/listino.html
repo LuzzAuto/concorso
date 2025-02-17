@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+
+
+        <title>Listino | LuzzAuto Concessionario</title>
+        <link rel="icon" href="assets/img/Logo/icona.webp" type="image/x-icon">
+
+        <link rel="stylesheet" media="screen and (max-width:1024px)" href="assets/css/mobile.css" type="text/css">
+        <link rel="stylesheet" media="screen and (min-width:1025px)" href="assets/css/desktop.css" type="text/css">
+        <link rel="stylesheet" media="print" href="assets/css/print.css" type="text/css">
+
+        <script src="assets/js/toggle.js"></script>
+        <script src="assets/js/form_validation_tool.js"></script>
+        <script src="assets/js/form_validation_listino.js"></script>
+
+        <meta name="description" content="Scopri il nostro catalogo auto e filtralo in base alle preferenze.">
+        <meta name="keywords" content="luzzauto, concessionario, macchina, auto, automobili, guida, vetture, test">
+        <meta name="author" content="Artusi Emanuele, Bellon Filippo, Diviesti Filippo, Righetto Filippo">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
+    </head>
+
+    <body>
+        <header class="header_help">
+            <nav aria-label="aiuti alla navigazione" class="navHelp">
+                <ul>
+                    <li>
+                        <a href="#list_main" class="aHelp">Vai ai filtri</a>
+                    </li>
+                    <li>
+                        <a href="#list" class="aHelp">Vai al listino</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <nav class="topNavBar">
+
+            <h1 class="hide">LuzzAuto</h1>
+            <button id="menu-button-container" aria-label="Seleziona per espandere e comprimere il menù di navigazione" data-hidden="false">
+                <span class="menu-button-bar1" aria-hidden="true"></span>
+                <span class="menu-button-bar2" aria-hidden="true"></span>
+                <span class="menu-button-bar3" aria-hidden="true"></span>
+            </button>
+            <ul id="menu"  aria-label="Menù del sito">
+                <li><a href="index.php"><span lang="en-GB">Home</span></a></li>
+                <li><a href="about.html">Chi siamo</a></li>
+                <li><a href="listino.php" tabindex="-1" id="here">Listino auto</a></li>
+                <li><a href="test_drive.html"><span lang="en-GB">Test drive</span></a></li>
+                <li><a href="utente.php">Area riservata</a></li>
+            </ul>
+        </nav>
+        <nav id="breadcrumb" aria-label="Percorso attuale nel sito">
+            <p>Ti trovi in: Listino auto</p>
+        </nav>
+
+        <main id="list_main">
+            <section id="list_filter">
+                <div id="list_filter_header" data-hidden="false">
+                    <h2 class="list_sectionTitle">Filtra il listino</h2>
+                    <button id="list_toggle_button" aria-label="Seleziona per espandere e comprimere il form filtro" title="Espandi/comprimi form" aria-expanded="true" aria-controls="list_filter_form" >▼</button>
+                </div>
+                <form action="listino.php" method="GET" id="list_filter_form" aria-label="Form per filtrare le automobili">
+                    <fieldset id="list_filter_basicInfo">
+                        <legend>INFORMAZIONI SUL VEICOLO</legend>
+                        
+                            <div class="list_input_container">
+                                <label for="list_filter_marca" id="list_label_marca">Marca</label>
+                                <input type="text" id="list_filter_marca" class="list_insert" [marca] name="marca" placeholder="Es. DM, UniPD, ESU...">
+                            </div>
+
+                            <div class="list_input_container">
+                                <label for="list_filter_modello" id="list_label_modello">Modello</label>
+                                <input type="text" id="list_filter_modello" class="list_insert" [modello] name="modello" placeholder="Es. Mudol, Belzuny...">
+                            </div>
+
+                            <div class="list_input_container">
+                                <label for="list_filter_anno" id="list_label_anno">Anno</label>
+                                <div>
+                                    <input type="number" id="list_filter_anno" class="list_insert" [anno] name="anno" min="1" step="1" max="2025" placeholder="Es. 2022">
+                                </div>
+                            </div>
+
+                            <div class="list_input_container">
+                                <label for="list_filter_colore" id="list_label_colore">Colore</label>
+                                <select id="list_filter_colore" class="list_insert" name="colore">
+                                    [colori]
+                                </select>
+                            </div>
+
+                            <div class="list_input_container">
+                                <label for="list_filter_alimentazione" id="list_label_alimentazione">Alimentazione</label>
+                                <select id="list_filter_alimentazione" class="list_insert" name="alimentazione">
+                                    <option selected value="">Seleziona un'opzione</option>
+                                    <option [qualsiasiA]value="qualsiasi">Qualsiasi</option>
+                                    <option [benzina]value="benzina">Benzina</option>
+                                    <option [gasolio]value="gasolio">Gasolio</option>
+                                    <option [elettrico]value="elettrico">Elettrico</option>
+                                    <option [metano]value="metano">Metano</option>
+                                    <option [ibrido]value="ibrido">Ibrido</option>
+                                </select>
+                            </div>
+
+                            <div class="list_input_container">
+                                <label for="list_filter_cambio" id="list_label_cambio">Cambio</label>
+                                <select id="list_filter_cambio" class="list_insert" name="cambio">
+                                    <option [qualsiasiCb]value="qualsiasi">Qualsiasi</option>
+                                    <option [manuale]value="manuale">Manuale</option>
+                                    <option [automatico]value="automatico">Automatico</option>
+                                </select>
+                            </div>
+
+                            <div class="list_input_container">
+                                <label for="list_filter_trazione" id="list_label_trazione">Trazione</label>
+                                <select id="list_filter_trazione" class="list_insert" name="trazione">
+                                    <option [qualsiasiT]value="qualsiasi">Qualsiasi</option>
+                                    <option [anteriore]value="anteriore">Anteriore</option>
+                                    <option [posteriore]value="posteriore">Posteriore</option>
+                                    <option [integrale]value="integrale">Integrale</option>
+                                </select>
+                            </div>
+
+                            <div class="list_input_container">
+                                <label for="list_filter_posti" id="list_label_posti">Numero posti</label>
+                                <div>
+                                    <input type="number" id="list_filter_posti" class="list_insert" [posti] name="posti" min="1" step="1" placeholder="Es. 5">
+                                </div>
+                            </div>
+
+                            <div class="list_input_container">
+                                <label for="list_filter_potenzaMin">Potenza minima (<abbr title="cavalli vapore">CV</abbr>)</label>
+                                <div>
+                                    <input type="number" id="list_filter_potenzaMin" class="list_insert" [potenzaMin] name="potenzaMin" min="1" step="1" placeholder="Es. 120">
+                                </div>
+                            </div>
+
+                            <div class="list_input_container">
+                                <label for="list_filter_potenzaMax">Potenza massima (<abbr title="cavalli vapore">CV</abbr>)</label>
+                                <div>
+                                    <input type="number"  id="list_filter_potenzaMax"class="list_insert" [potenzaMax] name="potenzaMax" min="1" step="1" placeholder="Es. 250">
+                                </div>
+                            </div>
+
+                            <div class="list_input_container">
+                                <label for="list_filter_pesoMin">Peso minimo (<abbr title="chilogrammi">kg</abbr>)</label>
+                                <div>
+                                    <input type="number" id="list_filter_pesoMin" class="list_insert" [pesoMin] name="pesoMin" min="1" step="1" placeholder="Es. 1100">
+                                </div>
+                            </div>
+                            <div class="list_input_container">
+                                <label for="list_filter_pesoMax">Peso massimo (<abbr title="chilogrammi">kg</abbr>)</label>
+                                <div>
+                                    <input type="number" id="list_filter_pesoMax" class="list_insert" [pesoMax] name="pesoMax" min="1" step="1" placeholder="Es. 1500">
+                                </div>
+                            </div>
+                            
+                            <div id="list_filter_neopatentati">
+                                <label for="neopatentatiID" id="list_label_neopatentati">
+                                    Idoneità neopatentati:
+                                    <div class="interruttore">
+                                        <input type="checkbox" class="interruttore" name="neopatentati" id="neopatentatiID" [neopatentati]value="1">
+
+                                        <div class="interruttore-slider">
+                                            <div class="interruttore-knob"></div>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                    </fieldset>
+                
+                    <!-- Fieldset per preferenze di acquisto 
+                    - Condizione (nuovo/usato)
+                    - Prezzo
+                    - Chilometraggio max
+                    -->
+                    <fieldset id="list_filter_preferences">
+                        <legend>PREFERENZE</legend>
+                        
+                        <div class="list_input_container">
+                            <label for="list_filter_condizione" id="list_label_condizione">Condizione</label>
+                            <select id="list_filter_condizione" name="condizione" class="list_insert">
+                                <option [qualsiasiCd]value="qualsiasi">Qualsiasi</option>
+                                <option [nuovo]value="nuovo">Nuovo</option>
+                                <option [usato]value="usato">Usato</option>
+                                <option [km0]value="km0">KM 0</option>
+                            </select>
+                        </div>
+                        
+                        <div class="list_input_container">
+                            <label for="list_filter_prezzo" id="list_label_prezzo">Prezzo massimo (<abbr title="Euro">&euro;</abbr>)</label>
+                            <input type="number" id="list_filter_prezzo" class="list_insert" [prezzoMax] name="prezzoMax" min="1" step="1" placeholder="Es. 40000">
+                        </div>
+
+                        <div class="list_input_container">
+                            <label for="list_filter_chilometraggio" id="list_label_chilometraggio">Chilometraggio massimo (<abbr title="chilometri">km</abbr>)</label>
+                            <input type="number" id="list_filter_chilometraggio" class="list_insert" [chilometraggio] name="chilometraggio" min="1" step="1" placeholder="Es. 15000">
+                        </div>
+
+                    </fieldset>
+
+                    <div id="list_filter_buttons">
+                        <input type="submit" name="action" value="Applica filtri" class="list_button">
+                        <input type="submit" id="list_clear" name="action" value="Rimuovi filtri" class="list_button">
+                    </div>
+                    <!--
+                    document.getElementById('list_clear').addEventListener('click', function () {
+                        // Rimuove i dati salvati localmente
+                        localStorage.clear(); 
+                        sessionStorage.clear();
+                        // Ricarica la pagina senza parametri nell'URL
+                        window.location.href = window.location.pathname;
+                    }); -->
+                </form>
+
+                <div class="form_errors">
+                    [err]
+                </div>
+            </section>
+
+            <section id="list" aria-label="Sezione lista automobili filtrata">
+                <h2 class="list_sectionTitle">Listino</h2>
+                <ul id="list_car_list">
+                </ul>
+            </section>
+        </main>
+        <footer>
+            <p><a href="https://validator.w3.org/nu/"><img src="https://www.w3.org/Icons/valid-xhtml10" alt="HTML Valido!"></a></p>
+            <p>FFF&E & <span lang="en-GB">Company</span> - <span lang="en-GB">All rights Reserved</span> - Alcuni marchi e modelli sono frutto della nostra immaginazione; le immagini relative sono state generate da strumenti di intelligenza artificiale.</p>
+            <p><a href="http://jigsaw.w3.org/css-validator/check/referer"><img src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="CSS Valido!"></a></p>
+        </footer>
+    </body>
+</html>
