@@ -29,5 +29,5 @@
 ## GENERALE (FORSE ANCHE MOBILE?)
 - [ ] Inserire il link per tornare su all'inizio della pagina.
 
-# AGGIORNARE RELAZIONE CON QUESTE MIGLIORIE (e testarle)!
-- [ ]
+# AGGIORNARE RELAZIONE CON QUESTE MIGLIORIE!
+- [ ] (e testarle)
