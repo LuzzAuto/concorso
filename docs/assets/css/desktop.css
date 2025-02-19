@@ -1365,13 +1365,15 @@ p.list_car_list_empty {
     max-width: 5em;
     transition: transform 0.3s ease, border-radius 0.3s ease, margin 0.3s ease;
     transform-origin: bottom center; /* L'ingrandimento parte dal basso */
+    cursor: pointer;
 }
 
-#details #details_box #details_box_carousel img:hover {
+#details #details_box #details_box_carousel img.expanded {
     transform: scale(4);
     border-radius: 0.1em;
     background-color: var(--content-text-bg-color);
     margin: 0 8em;
+    cursor: auto;
 }
 
 #details #details_box p {
