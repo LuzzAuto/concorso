@@ -1,7 +1,7 @@
 # Scadenza:
 25 Febbraio ore 12.00
 
-<span style="text-decoration: underline">### REPO PRIVATA: safe mettere password ecc. in chiaro</spam>
+<span style="text-decoration: underline">### REPO PRIVATA: safe mettere password ecc. in chiaro</span>
 
 # Migliorie:
 ## PRINT (Non richiesto nel concorso)
