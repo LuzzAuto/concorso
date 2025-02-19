@@ -51,7 +51,7 @@ function adjustMenuOnResize() {
             tasto.setAttribute("aria-hidden", "true");
         }
         else {
-            tasto.setAttribute("data-hidden", "false");
+            tasto.setAttribute("data-hidden", "true");
             tasto.setAttribute("tabindex", "0");
             tasto.setAttribute("aria-hidden", "false");
         }
@@ -63,7 +63,7 @@ function adjustMenuOnResize() {
                 tasto.setAttribute("aria-hidden", "true");
             }
             else {
-                tasto.setAttribute("data-hidden", "false");
+                tasto.setAttribute("data-hidden", "true");
                 tasto.setAttribute("tabindex", "0");
                 tasto.setAttribute("aria-hidden", "false");
             }
