@@ -1356,13 +1356,14 @@ p.list_car_list_empty {
 #details #details_box #details_box_carousel {
     height: 21em;
     display: flex;
-    align-items: end;
+    align-items: flex-end;
     justify-content: center;
+    gap: 0.5em;
 }
 
 #details #details_box #details_box_carousel img {
     max-width: 5em;
-    transition: transform 0.3s ease, border-radius 0.3s ease;
+    transition: transform 0.3s ease, border-radius 0.3s ease, margin 0.3s ease;
     transform-origin: bottom center; /* L'ingrandimento parte dal basso */
 }
 
@@ -1370,6 +1371,7 @@ p.list_car_list_empty {
     transform: scale(4);
     border-radius: 0.1em;
     background-color: var(--content-text-bg-color);
+    margin: 0 8em;
 }
 
 #details #details_box p {
