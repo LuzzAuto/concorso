@@ -17,7 +17,7 @@
 - [ ] In Amministratore, non viene mostrato nulla se c'è un errore nell'inserimento dell'anno.(SOSPETTO CONFLITTO JS HTML)
 
 ## DETTAGLIO AUTO (Emanuele)
-- [ ] I title bisognerebbe metterli diversi per ogni auto.
+- [X] I title bisognerebbe metterli diversi per ogni auto.
 - [ ] (Consiglio della prof) Mostro una delle due immagini dell'auto già in grande e metto la possibilità di sostituirla con l'altra se clicco.
 
 ## HOME (INDEX) (Emanuele)
@@ -28,3 +28,6 @@
 
 ## GENERALE (FORSE ANCHE MOBILE?)
 - [ ] Inserire il link per tornare su all'inizio della pagina.
+
+# AGGIORNARE RELAZIONE CON QUESTE MIGLIORIE (e testarle)!
+- [ ]
