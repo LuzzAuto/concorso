@@ -22,7 +22,7 @@
       (Risposta di Emanuele) eh, grazie, se non avessi perso tutto il tempo a togliere i display none
 
 ## HOME (INDEX) (Emanuele)
-- [X] Il Javascript va a modificare lo stile, Rimuovere. (l'ho solo commentato)
+- [X] Il Javascript va a modificare lo stile, Rimuovere.
 
 ## GENERALE MOBILE (Emanuele)
 - [X] Quando carico la pagina il menu a tendina viene aperto automaticamente. Sistemare e impostare che quando carico la pagina il menu parte da chiuso.
