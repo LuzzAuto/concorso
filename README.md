@@ -18,7 +18,7 @@
 
 ## DETTAGLIO AUTO (Emanuele)
 - [X] I title bisognerebbe metterli diversi per ogni auto.
-- [ ] (Consiglio della prof) Mostro una delle due immagini dell'auto già in grande e metto la possibilità di sostituirla con l'altra se clicco.
+- [X] (Consiglio della prof) Mostro una delle due immagini dell'auto già in grande e metto la possibilità di sostituirla con l'altra se clicco.
       (Risposta di Emanuele) eh, grazie, se non avessi perso tutto il tempo a togliere i display none
 
 ## HOME (INDEX) (Emanuele)
