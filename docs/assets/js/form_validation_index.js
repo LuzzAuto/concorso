@@ -69,7 +69,7 @@ function validatePrezzo() {
 
 /*
  * Utilizzato per eliminare il border radius che andrebbe altrimenti a coprire il testo alt 
- */
+ *
 function imgErrorHandler() {
 	let imgs = document.getElementsByClassName("stemma_brand");
 	for (let img of imgs) {
@@ -79,3 +79,4 @@ function imgErrorHandler() {
         });
     }
 }
+*/
