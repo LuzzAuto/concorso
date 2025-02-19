@@ -1,7 +1,7 @@
 ## (REPO PRIVATA: safe mettere password ecc. in chiaro)
 
 # Scadenza:
-25 Febbraio ore 12.00
+<table><tr><td>25 Febbraio ore 12.00</td></tr></table>
 
 # Migliorie:
 ## PRINT (Non richiesto nel concorso)
