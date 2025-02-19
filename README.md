@@ -32,3 +32,4 @@
 
 # AGGIORNARE RELAZIONE CON QUESTE MIGLIORIE!
 - [ ] (e testarle)
+- [ ] aggiunte di cursor pointer
