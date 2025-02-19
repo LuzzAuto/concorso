@@ -24,7 +24,7 @@
 - [ ] Il Javascript va a modificare lo stile, Rimuovere.
 
 ## GENERALE MOBILE (Emanuele)
-- [ ] Quando carico la pagina il menu a tendina viene aperto automaticamente. Sistemare e impostare che quando carico la pagina il menu parte da chiuso.
+- [X] Quando carico la pagina il menu a tendina viene aperto automaticamente. Sistemare e impostare che quando carico la pagina il menu parte da chiuso.
 
 ## GENERALE (FORSE ANCHE MOBILE?)
 - [ ] Inserire il link per tornare su all'inizio della pagina.
