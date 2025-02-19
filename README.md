@@ -1,6 +1,8 @@
 # Scadenza:
 25 Febbraio ore 12.00
 
+### REPO PRIVATA: safe mettere password ecc. in chiaro
+
 # Migliorie:
 ## PRINT (Non richiesto nel concorso)
 - [ ] Nella prima pagina dove ho titolo mostra quello e dopo spazio bianco per il resto della pagina; il contenuto parte dalla pagina successive.
