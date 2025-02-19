@@ -102,6 +102,7 @@ try {
         $stringaBottoni = "";
     }
 
+    $autoHTML = str_replace(search: "Dettaglio auto | LuzzAuto Concessionario", replace: $dettagli['modello']." | LuzzAuto Concessionario", subject: $autoHTML);
     $autoHTML = str_replace(search: "[immagini_auto]", replace: $immagini, subject: $autoHTML);
     $autoHTML = str_replace(search: "[dettagli_auto]", replace: $stringaDettagli, subject: $autoHTML);
     echo str_replace(search: "[bottoni_auto]", replace: $stringaBottoni, subject: $autoHTML);
