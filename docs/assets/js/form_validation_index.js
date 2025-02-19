@@ -66,17 +66,3 @@ function validatePrezzo() {
 	var prezzoMax = document.getElementById("home_prezzoMax").value;
 	return prezzoMax ? (isNaN(prezzoMax) || prezzoMax > 0) : true;
 }
-
-/*
- * Utilizzato per eliminare il border radius che andrebbe altrimenti a coprire il testo alt 
- *
-function imgErrorHandler() {
-	let imgs = document.getElementsByClassName("stemma_brand");
-	for (let img of imgs) {
-        img.addEventListener("error", function() {
-            // Imposta il border-radius a 0
-            this.style.borderRadius = 0;
-        });
-    }
-}
-*/
