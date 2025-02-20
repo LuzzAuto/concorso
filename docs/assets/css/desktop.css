@@ -32,7 +32,7 @@
     margin: 0;
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; }           /* Per lo smooth scrolling !!! CREA PROBLEMI CON LA VISUALIZZAZIONE DI ERRORI REQUIRED IN FORM TROPPO LUNGHI */
 
 h1, h2, h3 {
     text-align: center;

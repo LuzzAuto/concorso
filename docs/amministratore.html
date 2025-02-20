@@ -107,11 +107,11 @@
       </section>
 
       <section class="riquadriAdmin">
-        <form id="aggiungiAutoFormAdmin" action="amministratore.php#aggiungiAutoAdmin" method="POST" enctype="multipart/form-data">
+        <form id="aggiungiAutoFormAdmin" action="amministratore.php" method="POST" enctype="multipart/form-data">
           <fieldset>
 
             <legend class="nomeRiqAdmin">Aggiungi Automobile</legend>
-
+ 
             <label for="immagineOutAdmin" id="labelimmagineOutAdmin">Immagine esterna dell'auto:</label>
             <input type="file" id="immagineOutAdmin" name="immagineOutAdmin" required data-msg-required="Per favore, inserisci un'immagine" accept="image/*">
             
@@ -195,6 +195,7 @@
                     </div>
                 </label>
             </div>
+           
             <input type="submit" value="Aggiungi" id="aggiungiAutoAdmin" name="aggiungiAutoAdmin">
           </fieldset>
         </form>
