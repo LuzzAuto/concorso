@@ -7,10 +7,10 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 class DBConnection {
 	#private const HOST_DB = "tecweb.studenti.math.unipd.it";
-	private const HOST = "localhost";
-	private const NAME = "fbellon";
-	private const USER = "fbellon";
-	private const PASS = "";
+	private const HOST = "db";            		//localhost
+	private const NAME = "LuzzAutoDB";			//fbellon
+	private const USER = "userdb";				//fbellon
+	private const PASS = "userdb";
 
 	private $connection;
 
