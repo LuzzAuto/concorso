@@ -590,7 +590,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 #test_drive_main {
     display: flex;
     flex-direction: column;
-    align-items: center;
     width: 100%;
 }
 
@@ -617,6 +616,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     margin: 1.5em 20% 0 20%;
     text-align: center;
     max-width: 20em;
+    margin: auto;
 }
 
 #test_drive_comefunziona{
@@ -627,6 +627,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     padding: 3em 0;
     text-align: center;
     width: 90%;
+    margin: auto;
 }
 
 #test_drive_comefunziona > h3{
@@ -676,6 +677,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     margin: auto 2em;
     font-size: 1.15em;
     font-weight: 300;
+    margin: auto;
 }
 
 #test_drive_prenota{
@@ -684,7 +686,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     color: var(--form-text-color);
     border-radius: 2em 0 2em 0;
     width: 90%;
-    margin-bottom: 4em;
+    margin: auto auto 4em auto;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
     padding-bottom: 3em;
 }
@@ -819,7 +821,6 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
 #aboutUs_main {
     display: flex;
     flex-direction: column;
-    align-items: center;
     width: 100%;
 }
 
@@ -938,7 +939,7 @@ section.aboutUs_history img {
 #aboutUs_reachUs {
     border-radius: 3em 0;
     width: 80%;
-    margin: 5em 0 3em;
+    margin: 5em auto 3em auto;
     display: inline-block;
     text-align: center;
     background-color: var(--form-bg-color);
