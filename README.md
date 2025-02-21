@@ -17,7 +17,7 @@
 - [ ] In Amministratore, non viene mostrato nulla se c'è un errore nell'inserimento dell'anno. (Problema con scroll behavior smooth se uso anche required e errore è più in alto rispetto a pagina visualizzata)
 
 ## GENERALE (FORSE ANCHE MOBILE?)
-- [ ] Inserire il link per tornare su all'inizio della pagina.
+- [X] Inserire il link per tornare su all'inizio della pagina.
 
 ## DETTAGLIO AUTO (Emanuele)
 - [X] I title bisognerebbe metterli diversi per ogni auto.
