@@ -13,7 +13,7 @@
 - [ ] Problema input spostati a destra(Controllato e non sembra, non so come lo abbiano riprodotto) e larghezza inputs form aumenta se ci sono errori.
 
 ## UTENTE - AMMINISTRATORE
-- [ ] Rimuovere lo scroll interno nelle tabelle, metterle per intero e usare lo scroll della pagina.
+- [X] Rimuovere lo scroll interno nelle tabelle, metterle per intero e usare lo scroll della pagina.
 - [ ] In Amministratore, non viene mostrato nulla se c'è un errore nell'inserimento dell'anno. (Problema con scroll behavior smooth se uso anche required e errore è più in alto rispetto a pagina visualizzata)
 
 ## GENERALE (FORSE ANCHE MOBILE?)
