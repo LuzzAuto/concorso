@@ -18,6 +18,7 @@
 
 ## GENERALE (FORSE ANCHE MOBILE?)
 - [X] Inserire il link per tornare su all'inizio della pagina.
+- [X] Inserire il link per tornare su all'inizio della pagina in DETTAGLIO AUTO.
 
 ## DETTAGLIO AUTO (Emanuele)
 - [X] I title bisognerebbe metterli diversi per ogni auto.
