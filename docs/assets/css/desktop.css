@@ -1922,29 +1922,17 @@ p.list_car_list_empty {
     font-size: 1.6em;
 }
 
-
 #prenotazioni_utente {
     margin-top: 3em;
-    overflow-y: auto; /* make the table scrollable if height is more than 200 px  */
-    height: 15em;
-    width: 85%;
-    margin: auto;/* gives an initial height of 200px to the table */
-}
-#prenotazioni_utente thead th{
-    position: sticky; /* make the table heads sticky */
-    top: 1.45em; /* table head will be placed from the top of the table and sticks to it */
+    width: 88%;
+    margin: auto;
 }
 
 #prenotazioni_utente caption{
-    position: sticky; /* make the table heads sticky */
-    top: 0;
+    margin-bottom: 0.5em;
     background-color: var(--header-bg-color);
 }
 
-#prenotazioni_utente table {
-    border-collapse: collapse; /* make the table borders collapse to each other */
-    width: 100%;
-}
 #prenotazioni_utente th,td {
     padding: 8px 16px;
     border: 1px solid #ccc;
@@ -1953,11 +1941,8 @@ p.list_car_list_empty {
     background: var(--cards-bg-color);
 }
 
-
-
 .tabellaPrenUtente {
-    width: calc(100% - 6em); /* 100% meno il padding a sinistra e a destra */
-    border-collapse: collapse;
+    border-collapse: collapse; /* make the table borders collapse to each other */
     margin: 1em auto; 
 }
 
@@ -1972,7 +1957,7 @@ p.list_car_list_empty {
     border: 1px solid var(--form-border-input-color);
 }
 
-.tabellaPrenUtente date{
+.tabellaPrenUtente date {
     display: block;
 }
 
@@ -1997,7 +1982,7 @@ p.list_car_list_empty {
 /*gestione prenotazioni*/
 
 #labelPrenUtente{
-    position: absolute;
+    /*position: absolute;*/
     display: block;
     margin-left: 0.7em;
     margin-top: 1.2em;
@@ -2244,7 +2229,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .prenAdmin th {
     background: var(--cards-bg-color);
 }
-
 
 /* tabella prenotazione */
 .tabellaPrenAdmin {

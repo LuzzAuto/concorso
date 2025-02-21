@@ -1860,22 +1860,14 @@ section.aboutUs_history img {
 
 #prenotazioni_utente {
     margin-top: 1em;
-    overflow-y: auto; /* make the table scrollable if height is more than 200 px  */
-    height: 23em; /* gives an initial height of 200px to the table */
-}
-#prenotazioni_utente thead th{
-    position: sticky; /* make the table heads sticky */
-    top: 1.5em; /* table head will be placed from the top of the table and sticks to it */
 }
 
 #prenotazioni_utente caption{
-    position: sticky; /* make the table heads sticky */
-    top: -0.1em; /* table head will be placed from the top of the table and sticks to it */
+    margin-bottom: 1em;
     background-color: var(--header-bg-color);
 }
 
 #prenotazioni_utente table {
-    border-collapse: collapse; /* make the table borders collapse to each other */
     width: 100%;
 }
 #prenotazioni_utente th,td {
@@ -1885,7 +1877,6 @@ section.aboutUs_history img {
 #prenotazioni_utente th {
     background: var(--cards-bg-color);
 }
-
 
 #descTable{
     position: absolute;
