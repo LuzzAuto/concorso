@@ -37,6 +37,14 @@ html, body {
     height: 100%;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+.html_smooth { scroll-behavior: smooth; }           /* Per lo smooth scrolling !!! CREA PROBLEMI CON LA VISUALIZZAZIONE DI ERRORI REQUIRED IN FORM TROPPO LUNGHI */
+
+.html_auto { scroll-behavior: auto; }
+
 a{
     color: var(--not-visited-link);
     text-underline-offset: 0.3em;
@@ -2214,6 +2222,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 /*Aggiungi Automobile*/
 
+#aggiungiAutoFormAdmin > fieldset > legend {
+    margin-bottom: 1.5em;
+}
+
 #labelMarcaAdmin, #labelModelloAdmin, #labelAnnoAdmin, #labelColoreAdmin,
 #labelAlimAdmin, #labelCambioAdmin, #labelTrazioneAdmin, #labelPotenzaAdmin, 
 #labelPesoAdmin, #labelPostiAdmin, #labelCondizioniAdmin, #labelChilometriAdmin,
@@ -2226,6 +2238,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     color: var(--form-border-input-color);
     background-color: var(--navbar-bg-color);
     padding: 0 0.3em;
+}
+
+#labelimmagineOutAdmin, #labelimmagineInAdmin, #labelAltImmagineOutAdmin, #labelAltImmagineInAdmin {
+    margin-top: 0.8em;
 }
 
 #labelNeopatentatiAdmin, #neopatentatiAdmin {
