@@ -197,7 +197,7 @@ function validateFormAggiungiAuto(){
 */
 function validateAltImmagineOut(){
     var altImmagineOut = document.getElementById("altImmagineOutAdmin").value;
-    const allowedChars = /^([A-Za-z0-9,.]+( [A-Za-z0-9,.]+)*)?$/;
+    const allowedChars = /^([A-Za-z0-9,.]+( [A-Za-z0-9,.]+)*)$/;
     return altImmagineOut ? (allowedChars.test(altImmagineOut) && altImmagineOut.length <= 100) : true;
 }
 
@@ -206,7 +206,7 @@ function validateAltImmagineOut(){
 */
 function validaAltimmagineIn(){
     var altImmagineIn = document.getElementById("altImmagineInAdmin").value;
-    const allowedChars = /^([A-Za-z0-9,.]+( [A-Za-z0-9,.]+)*)?$/;
+    const allowedChars = /^([A-Za-z0-9,.]+( [A-Za-z0-9,.]+)*)$/;
     return altImmagineIn ? (allowedChars.test(altImmagineIn) && altImmagineIn.length <= 100) : true;
 }
 
@@ -214,7 +214,7 @@ function validaAltimmagineIn(){
 * Controllo la marca del veicolo
 */
 function validateMarca() {
-	const allowedChars = /^([A-Za-z0-9\-]+( [A-Za-z0-9\-]+)*)?$/; // lettere maiuscole e minuscole, numeri e il carattere trattino(-)
+	const allowedChars = /^([A-Za-z0-9\-]+( [A-Za-z0-9\-]+)*)$/; // lettere maiuscole e minuscole, numeri e il carattere trattino(-)
 	var marca = document.getElementById("marcaAdmin").value;
 	return allowedChars.test(marca ? marca : "");
 }
@@ -223,7 +223,7 @@ function validateMarca() {
 * Controllo il modello del veicolo
 */
 function validateModello() {
-	const allowedChars = /^([A-Za-z0-9\-]+( [A-Za-z0-9\-]+)*)?$/; // lettere maiuscole e minuscole, numeri e il carattere trattino(-)
+	const allowedChars = /^([A-Za-z0-9\-]+( [A-Za-z0-9\-]+)*)$/; // lettere maiuscole e minuscole, numeri e il carattere trattino(-)
 	var modello = document.getElementById("modelloAdmin").value;
 	return allowedChars.test(modello ? modello : "");
 }
@@ -241,7 +241,7 @@ function validateAnno() {
 * Controllo il colore del veicolo
 */
 function validateColore() {
-	const allowedChars = /^([A-Za-z]+( [A-Za-z]+)*)?$/; // lettere maiuscole e minuscole
+	const allowedChars = /^([A-Za-z]+( [A-Za-z]+)*)$/; // lettere maiuscole e minuscole
 	var colore = document.getElementById("coloreAdmin").value;
 	return allowedChars.test(colore ? colore : "");
 }
@@ -250,7 +250,7 @@ function validateColore() {
 * Controllo il tipo di alimentazione del veicolo
 */
 function validateAlimentazione() {
-	const allowedChars = /^([A-Za-z]+( [A-Za-z]+)*)?$/; // lettere maiuscole e minuscole
+	const allowedChars = /^([A-Za-z]+( [A-Za-z]+)*)$/; // lettere maiuscole e minuscole
 	var alimentazione = document.getElementById("alimentazioneAdmin").value;
 	return allowedChars.test(alimentazione ? alimentazione : "");
 }
@@ -259,7 +259,7 @@ function validateAlimentazione() {
 * Controllo il tipo di cambio del veicolo
 */
 function validateCambio() {
-	const allowedChars = /^([A-Za-z]+( [A-Za-z]+)*)?$/; // lettere maiuscole e minuscole
+	const allowedChars = /^([A-Za-z]+( [A-Za-z]+)*)$/; // lettere maiuscole e minuscole
 	var cambio = document.getElementById("cambioAdmin").value;
 	return allowedChars.test(cambio ? cambio : "");
 }
@@ -268,7 +268,7 @@ function validateCambio() {
 * Controllo il tipo di trazione del veicolo
 */
 function validateTrazione() {
-	const allowedChars = /^([A-Za-z]+( [A-Za-z]+)*)?$/; // lettere maiuscole e minuscole
+	const allowedChars = /^([A-Za-z]+( [A-Za-z]+)*)$/; // lettere maiuscole e minuscole
 	var trazione = document.getElementById("trazioneAdmin").value;
 	return allowedChars.test(trazione ? trazione : "");
 }
@@ -301,7 +301,7 @@ function validatePosti() {
 * Controllo il modello del veicolo
 */
 function validateCondizione() {
-    const allowedChars = /^([A-Za-z0-9]+( [A-Za-z0-9]+)*)?$/; // lettere maiuscole e minuscole
+    const allowedChars = /^([A-Za-z0-9]+( [A-Za-z0-9]+)*)$/; // lettere maiuscole e minuscole
     var condizione = document.getElementById("condizioneAdmin").value;
     return allowedChars.test(condizione ? condizione : "");
 }

@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
 	validateFastSearch();
-	imgErrorHandler();
 });
 
 function validateFastSearch() {
