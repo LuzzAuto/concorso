@@ -1456,7 +1456,7 @@ section.aboutUs_history img {
     text-align: center;
 }
 
-#home_fastSearch h3.home_sectionTitle {
+#home_fastSearch h2.home_sectionTitle {
     padding: 1.5em 1em 0;
     font-size: 1.5em;
 }
@@ -2113,24 +2113,16 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     font-weight: 600;
 }
 
+/* tabella prenotazione */
 .prenAdmin {
     margin-top: 3em;
-    overflow-y: auto; /* make the table scrollable if height is more than 200 px  */
-    height: 25em; /* gives an initial height of 200px to the table */
-}
-.prenAdmin thead th{
-    position: sticky; /* make the table heads sticky */
-    top: 1.5em; /* table head will be placed from the top of the table and sticks to it */
 }
 
 .prenAdmin caption{
-    position: sticky; /* make the table heads sticky */
-    top: -0.05em; /* table head will be placed from the top of the table and sticks to it */
     background-color: var(--header-bg-color);
 }
 
 .prenAdmin table {
-    border-collapse: collapse; /* make the table borders collapse to each other */
     width: 100%;
 }
 .prenAdmin th,td {

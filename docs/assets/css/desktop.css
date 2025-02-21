@@ -2201,25 +2201,17 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     margin-bottom: 0.7em;
 }
 
+/* tabella prenotazione */
 .prenAdmin {
-    overflow-y: auto; /* make the table scrollable if height is more than 200 px  */
-    height: 25em;
     width: 85%;
     margin: auto; /* gives an initial height of 200px to the table */
 }
-.prenAdmin thead th{
-    position: sticky; /* make the table heads sticky */
-    top: 1.5em; /* table head will be placed from the top of the table and sticks to it */
-}
 
 .prenAdmin caption{
-    position: sticky; /* make the table heads sticky */
-    top: 0; /* table head will be placed from the top of the table and sticks to it */
     background-color: var(--header-bg-color);
 }
 
 .prenAdmin table {
-    border-collapse: collapse; /* make the table borders collapse to each other */
     width: 100%;
 }
 .prenAdmin th,td {
@@ -2230,9 +2222,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     background: var(--cards-bg-color);
 }
 
-/* tabella prenotazione */
 .tabellaPrenAdmin {
-    width: calc(100% - 6em); /* 100% meno il padding a sinistra e a destra */
     border-collapse: collapse;
     margin: 1em auto;
 }
