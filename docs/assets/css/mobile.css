@@ -354,7 +354,7 @@ a:visited {
 
 .backToTopHidden{
     position: absolute;
-    right: -999em;
+    text-indent: -999em;
 }
 
 
