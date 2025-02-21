@@ -109,87 +109,131 @@ function validateAzione(){
 // AGGIUNGI AUTO
 
 function validateFormAggiungiAuto(){
-    let form = document.getElementById('aggiungiAutoFormAdmin');
+    var form = document.getElementById('aggiungiAutoFormAdmin');
     if(form){
         form.addEventListener('submit', function (event){
             resetFormError(1);
 
-            let msg = "";
-            let ok = true;
-
-            if(!validateAltImmagineOut()){
-                msg += "<p id=\"altImmagineOut_err\">L'alternativa testuale che hai inserito riguardante la prima immagine non &egrave; valida, puoi usare solo lettere, numeri, spazi(non all'inizio e alla fine) e i caratteri virgola e punto. Non devi superare i 100 caratteri di lunghezza.</p>";
-                ok = false;
-            }
-            if(!validaAltimmagineIn()){
-                msg += "<p id=\"altImmagineIn_err\">L'alternativa testuale che hai inserito riguardante la seconda immagine non &egrave; valida, puoi usare solo lettere, numeri, spazi(non all'inizio e alla fine) e i caratteri virgola e punto. Non devi superare i 100 caratteri di lunghezza.</p>";
-                ok = false;
-            }
-            if(!validateMarca()){
-                msg += "<p id=\"marca_err\">La marca che hai inserito non &egrave; valida, puoi usare solo lettere, numeri, spazi(non all'inizio e alla fine) e il carattere \"-\". Non devi superare i 50 caratteri di lunghezza.</p>";
-                ok = false;
-            }
-            if(!validateModello()){
-                msg += "<p id=\"modello_err\">Il modello che hai inserito non &egrave; valido, puoi usare solo lettere, numeri, spazi(non all'inizio e alla fine) e il carattere \"-\". Non devi superare i 50 caratteri di lunghezza.</p>";
-                ok = false;
-            }
-            if(!validateAnno()){
-                msg += "<p id=\"anno_err\">L'anno che hai inserito non &egrave; valido, inserisci un anno maggiore di 0 e di massimo 4 cifre.</p>";
-                ok = false;
-            }
-            if(!validateColore()){
-                msg += "<p id=\"colore_err\">Il colore che hai inserito non &egrave; valido, puoi usare solo lettere e spazi(non all'inizio e alla fine).</p>";
-                ok = false;
-            }
-            if(!validateAlimentazione()){
-                msg += "<p id=\"alimentazione_err\">Hai selezionato un'alimentazione non valida. Seleziona nuovamente la scelta desiderata.</p>";
-                ok = false;
-            }
-            if(!validateCambio()){
-                msg += "<p id=\"cambio_err\">Hai selezionato un tipo di cambio non valido. Seleziona nuovamente la scelta desiderata.</p>";
-                ok = false;
-            }
-            if(!validateTrazione()){
-                msg += "<p id=\"trazione_err\">Hai selezionato un tipo di trazione non valido. Seleziona nuovamente la scelta desiderata.</p>";
-                ok = false;
-            }
-            if(!validatePotenza()){
-                msg += "<p id=\"potenza_err\">Hai inserito una potenza non valida, inserisci una potenza maggiore di 0.</p>";
-                ok = false;
-            }
-            if(!validatePeso()){
-                msg += "<p id=\"peso_err\">Hai inserito un peso non valido, inserisci un peso maggiore di 0.</p>";
-                ok = false;
-            }
-            if(!validatePrezzo()){
-                msg += "<p id=\"prezzo_err\">Hai inserito un prezzo non valido, inserisci un prezzo maggiore di 0.</p>";
-                ok = false;
-            }
-            if(!validatePosti()){
-                msg += "<p id=\"posti_err\">Hai inserito un numero di posti non valido, inserisci un numero maggiore di 0.</p>";
-                ok = false;
-            }
-            if(!validateCondizione()){
-                msg += "<p id=\"condizione_err\">hai selezionato una condizione non valida. Seleziona nuovamente la scelta desiderata.</p>";
-                ok = false;
-            }
-            if(!validateChilometraggio()) {
-				ok = false;
-				msg += "<p id=\"chilometraggio_err\">Hai inserito un chilometraggio non valido, inserisci un valore maggiore di 0.</p>";
-			}
-			if(!validateNeopatentati()) {
-				ok = false;
-				msg += "<p id=\"neopatentati_err\">Hai selezionato un valore di neopatentati non valido. Seleziona nuovamente la scelta desiderata.</p>";
-			}
-
-
-            if(!ok){
-                addFormError(msg, 1);
+            // Controllo con vincoli html (required, min, max, ...)
+            if(!form.checkValidity()) {
+                var html = document.getElementsByTagName("html")[0];
+                console.log("Form not valid");
+                html.className = "html_auto";
+                form.reportValidity();
+                html.className = "html_smooth";
                 event.preventDefault();
+            } else {
+
+                // Controllo personalizzato
+                let msg = "";
+                let ok = true;
+
+                if(!validateImmagineOut()) {
+                    msg += "<p id=\"immagineOut_err\">La prima immagine che hai inserito non &egrave; valida.</p>";
+                    ok = false;
+                }
+
+                if(!validateImmagineIn()) {
+                    msg += "<p id=\"immagineIn_err\">La seconda immagine che hai inserito non &egrave; valida.</p>";
+                    ok = false;
+                }
+
+                if(!validateAltImmagineOut()){
+                    msg += "<p id=\"altImmagineOut_err\">L'alternativa testuale che hai inserito riguardante la prima immagine non &egrave; valida, puoi usare solo lettere, numeri, spazi(non all'inizio e alla fine) e i caratteri virgola e punto. Non devi superare i 100 caratteri di lunghezza.</p>";
+                    ok = false;
+                }
+                if(!validaAltimmagineIn()){
+                    msg += "<p id=\"altImmagineIn_err\">L'alternativa testuale che hai inserito riguardante la seconda immagine non &egrave; valida, puoi usare solo lettere, numeri, spazi(non all'inizio e alla fine) e i caratteri virgola e punto. Non devi superare i 100 caratteri di lunghezza.</p>";
+                    ok = false;
+                }
+                if(!validateMarca()){
+                    msg += "<p id=\"marca_err\">La marca che hai inserito non &egrave; valida, puoi usare solo lettere, numeri, spazi(non all'inizio e alla fine) e il carattere \"-\". Non devi superare i 50 caratteri di lunghezza.</p>";
+                    ok = false;
+                }
+                if(!validateModello()){
+                    msg += "<p id=\"modello_err\">Il modello che hai inserito non &egrave; valido, puoi usare solo lettere, numeri, spazi(non all'inizio e alla fine) e il carattere \"-\". Non devi superare i 50 caratteri di lunghezza.</p>";
+                    ok = false;
+                }
+                if(!validateAnno()){
+                    msg += "<p id=\"anno_err\">L'anno che hai inserito non &egrave; valido, inserisci un anno maggiore di 0 e di massimo 4 cifre.</p>";
+                    ok = false;
+                }
+                if(!validateColore()){
+                    msg += "<p id=\"colore_err\">Il colore che hai inserito non &egrave; valido, puoi usare solo lettere e spazi(non all'inizio e alla fine).</p>";
+                    ok = false;
+                }
+                if(!validateAlimentazione()){
+                    msg += "<p id=\"alimentazione_err\">Hai selezionato un'alimentazione non valida. Seleziona nuovamente la scelta desiderata.</p>";
+                    ok = false;
+                }
+                if(!validateCambio()){
+                    msg += "<p id=\"cambio_err\">Hai selezionato un tipo di cambio non valido. Seleziona nuovamente la scelta desiderata.</p>";
+                    ok = false;
+                }
+                if(!validateTrazione()){
+                    msg += "<p id=\"trazione_err\">Hai selezionato un tipo di trazione non valido. Seleziona nuovamente la scelta desiderata.</p>";
+                    ok = false;
+                }
+                if(!validatePotenza()){
+                    msg += "<p id=\"potenza_err\">Hai inserito una potenza non valida, inserisci una potenza maggiore di 0.</p>";
+                    ok = false;
+                }
+                if(!validatePeso()){
+                    msg += "<p id=\"peso_err\">Hai inserito un peso non valido, inserisci un peso maggiore di 0.</p>";
+                    ok = false;
+                }
+                if(!validatePrezzo()){
+                    msg += "<p id=\"prezzo_err\">Hai inserito un prezzo non valido, inserisci un prezzo maggiore di 0.</p>";
+                    ok = false;
+                }
+                if(!validatePosti()){
+                    msg += "<p id=\"posti_err\">Hai inserito un numero di posti non valido, inserisci un numero maggiore di 0.</p>";
+                    ok = false;
+                }
+                if(!validateCondizione()){
+                    msg += "<p id=\"condizione_err\">hai selezionato una condizione non valida. Seleziona nuovamente la scelta desiderata.</p>";
+                    ok = false;
+                }
+                if(!validateChilometraggio()) {
+                    ok = false;
+                    msg += "<p id=\"chilometraggio_err\">Hai inserito un chilometraggio non valido, inserisci un valore maggiore di 0.</p>";
+                }
+                if(!validateNeopatentati()) {
+                    ok = false;
+                    msg += "<p id=\"neopatentati_err\">Hai selezionato un valore di neopatentati non valido. Seleziona nuovamente la scelta desiderata.</p>";
+                }
+
+
+                if(!ok){
+                    addFormError(msg, 1);
+                    event.preventDefault();
+                }
             }
             
         });
     }
+}
+
+/*
+* Controllo presenza prima immagine
+*/
+function validateImmagineOut(){
+    var immagineOut = document.getElementById("immagineOutAdmin").files;
+    if(immagineOut.length != 0){
+        return true;
+    }
+    return false;
+}
+
+/*
+* Controllo presenza seconda immagine
+*/
+function validateImmagineIn(){
+    var immagineIn = document.getElementById("immagineInAdmin").files;
+    if(immagineIn.length != 0){
+        return true;
+    }
+    return false;
 }
 
 /*
