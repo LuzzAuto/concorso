@@ -10,7 +10,7 @@
 - [ ] Stampare i forms nelle pagine Login e Registrazione. Questi form sono important in quanto contengono informazioni importanti per l'utente.
 
 ## REGISTRAZIONE
-- [ ] Problema input spostati a destra(Controllato e non sembra, non so come lo abbiano riprodotto) e larghezza inputs form aumenta se ci sono errori.
+- [ ] Problema input spostati a destra(Controllato e non sembra, non so come lo abbiano riprodotto).
 
 ## UTENTE - AMMINISTRATORE
 - [X] Rimuovere lo scroll interno nelle tabelle, metterle per intero e usare lo scroll della pagina.
