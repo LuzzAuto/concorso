@@ -33,4 +33,5 @@
 
 # AGGIORNARE RELAZIONE CON QUESTE MIGLIORIE!
 - [ ] (e testarle)
-- [ ] aggiunte di cursor pointer
+- [ ] aggiunte di cursor pointer (select e immagini in dettaglio)
+- [ ] spiegare back to top (e scorciatoia Alt+T)
