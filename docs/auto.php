@@ -95,7 +95,7 @@ try {
         <a class="list_button" href="test_drive.php#test_drive_prenota">Prenota un test drive</a>';
 
     } else {
-        $immagini = "<img src=\"assets/img/Content/auto-non-trovata.webp\" alt=\"Auto ricoperta di schiuma\">";
+        $immagini = "<img src=\"assets/img/Content/auto-non-trovata.webp\" alt=\"Auto ricoperta di schiuma\" class=\"expanded\">";
         $stringaDettagli = "
             <h2>Qualcuno potrebbe aver portato il veicolo all'autolavaggio</h2>
             <h3>Non riusciamo a trovare i dettagli del veicolo specificato</h3>
@@ -103,6 +103,8 @@ try {
             Puoi riprovare più tardi oppure <a href='listino.php'>tornare al nostro listino</a>.</p>
             ";
         $stringaBottoni = "";
+        $dettagli = [];
+        $dettagli['modello'] = "Auto non trovata";  // per il title
     }
 
     $autoHTML = str_replace(search: "Dettaglio auto | LuzzAuto Concessionario", replace: $dettagli['modello']." | LuzzAuto Concessionario", subject: $autoHTML);
