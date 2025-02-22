@@ -259,6 +259,7 @@ select option {
     position: absolute;
     bottom: 0.5em;
     right: 1em;
+    border: 1px solid white;
 }
 
 .backToTopHidden{
