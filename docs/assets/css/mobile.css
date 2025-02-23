@@ -1344,7 +1344,7 @@ section.aboutUs_history img {
 ********************/
 
 #details {
-    margin-top: 8em;
+    margin-top: 5em;
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
