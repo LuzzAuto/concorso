@@ -32,7 +32,7 @@
 - [X] Quando carico la pagina il menu a tendina viene aperto automaticamente. Sistemare e impostare che quando carico la pagina il menu parte da chiuso.
 
 # AGGIORNARE RELAZIONE CON QUESTE MIGLIORIE!
-- [ ] (e testarle)
-- [ ] aggiunte di cursor pointer (select e immagini in dettaglio)
-- [ ] spiegare back to top (e scorciatoia Alt+T)
-- [ ] spiegare smooth
+- [X] (e testarle)
+- [X] aggiunte di cursor pointer (select e immagini in dettaglio)
+- [X] spiegare back to top (e scorciatoia Alt+T)
+- [X] spiegare smooth
