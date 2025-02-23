@@ -6,11 +6,10 @@ use Exception;
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 class DBConnection {
-	#private const HOST_DB = "tecweb.studenti.math.unipd.it";
-	private const HOST = "db";            		//localhost
-	private const NAME = "LuzzAutoDB";			//fbellon
-	private const USER = "userdb";				//fbellon
-	private const PASS = "userdb";
+	private const HOST = "localhost";            		//localhost
+	private const NAME = "eartusi";
+	private const USER = "eartusi";
+	private const PASS = "ij4aeb7Ruquufai5";
 
 	private $connection;
 
