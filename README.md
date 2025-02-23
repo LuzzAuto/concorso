@@ -35,3 +35,4 @@
 - [ ] (e testarle)
 - [ ] aggiunte di cursor pointer (select e immagini in dettaglio)
 - [ ] spiegare back to top (e scorciatoia Alt+T)
+- [ ] spiegare smooth
