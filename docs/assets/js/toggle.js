@@ -42,7 +42,7 @@ function adjustMenuOnResize() {
             menuOpenClose();
         });
 
-        // Esegui al caricamento e al resize
+        // Esegui al caricamento e al resize (chiuso default)
         if (window.innerWidth > 1024) {
             tasto.setAttribute("data-hidden", "true");
             tasto.setAttribute("tabindex", "-1");

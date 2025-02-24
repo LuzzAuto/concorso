@@ -47,12 +47,5 @@ function switchToggle() {
             toggleButton.setAttribute('aria-expanded', toggleInput.getAttribute("data-hidden")==="false" ? "true" : "false");
             toggleButton.setAttribute('aria-label', toggleInput.getAttribute("data-hidden")==="false" ? 'Seleziona per comprimere il form filtro' : 'Seleziona per espandere il form filtro');
         });
-        // Esegui al caricamento e al resize
-        toggleInput.setAttribute("data-hidden", "false");
-        filterOpenClose();
-        window.addEventListener('resize', function() {
-            toggleInput.setAttribute("data-hidden", "false");
-            filterOpenClose();
-        });
     }
 }
