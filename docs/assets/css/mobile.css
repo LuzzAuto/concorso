@@ -1286,6 +1286,7 @@ section.aboutUs_history img {
     border: 1px solid white;
     padding: 0.7em;
     border-radius: 1em;
+    align-self: start;
 }
 
 .list_car_item .list_car_image {
