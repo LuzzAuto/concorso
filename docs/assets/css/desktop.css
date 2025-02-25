@@ -1310,7 +1310,7 @@ p.list_car_list_empty {
 
 .list_car_item .list_car_item_link {
     position: absolute;
-    right: 0.5em;
+    right: 9.3em;
     bottom: 0.5em;
     background-color: black;
     border: 1px solid white;
@@ -1347,7 +1347,7 @@ p.list_car_list_empty {
 
 .list_car_item .list_car_info {
     flex: 1; /* Occupa lo spazio rimanente */
-    padding: 1em;
+    padding: 0 1em 1em 1em;
     transition: color 0.3s ease;
 }
 
