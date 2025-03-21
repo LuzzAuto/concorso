@@ -19,6 +19,6 @@ dimostrare che è un castello di carta basato su preconcetti e pigrizia e non su
 **Terzo classificato.**
 
 ## Collegamenti
-[Sito CAA](https://web.math.unipd.it/CAA/)
-[Registrazione della conferenza in Palazzo Bo](https://www.youtube.com/watch?v=hEXfLpDN-J4)
+[Sito CAA](https://web.math.unipd.it/CAA/) \
+[Registrazione della conferenza in Palazzo Bo](https://www.youtube.com/watch?v=hEXfLpDN-J4) \
 [Locandina della conferenza in Palazzo Bo](https://web.math.unipd.it/CAA/Locandina-2025.pdf)
