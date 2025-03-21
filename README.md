@@ -1,38 +1,24 @@
-## (REPO PRIVATA: safe mettere password ecc. in chiaro)
+# Versione presentata al Concorso Accattivante Accessibile dell'Università di Padova - IV Edizione (2025)
+## Il CAA - un concorso di abilità e attenzione agli altri:
+Chi dice che un sito web accessibile sia necessariamente «brutto» mente!
+Il problema di fondo è che Accessibilità, Design, Interazione e User Experience difficilmente si 
+siedono allo stesso tavolo per progettare un sito web che risponda sia a canoni di «bellezza» che di 
+«funzionalità» e di «inclusione».  
+Questa iniziativa vuole contribuire a sfatare il mito del brutto anatroccolo del sito accessibile e 
+dimostrare che è un castello di carta basato su preconcetti e pigrizia e non su fondamenta reali.
 
-# Scadenza:
-<table><tr><td>25 Febbraio ore 12.00</td></tr></table>
+## Migliorie apportate:
+- rimosso lo scroll interno nelle tabelle;
+- gestione dinamica dello scroll smooth per risolvere problemi di visualizzazione dei messaggi di errore nel form di Amministratore;
+- collegamento "Back to top" dinamico (e scorciatoia Alt+T);
+- title delle pagine di dettaglio delle auto sono personalizzati;
+- immagini di dettaglio delle auto rimangono ingrandite se selezionate (indicato con il cursor pointer);
+- menù versione mobile rimane chiuso di default.
 
-# Migliorie:
-## PRINT (Non richiesto nel concorso)
-- [ ] Nella prima pagina dove ho titolo mostra quello e dopo spazio bianco per il resto della pagina; il contenuto parte dalla pagina successive.
-- [ ] I punti elenco sono brutti da mostrare. Eventualmente sostituirli con delle icone.
-- [ ] Stampare i forms nelle pagine Login e Registrazione. Questi form sono important in quanto contengono informazioni importanti per l'utente.
+## Posizionamento:
+**Terzo classificato.**
 
-## REGISTRAZIONE
-- [X] Problema input spostati a destra(Controllato e non sembra, non so come lo abbiano riprodotto).
-
-## UTENTE - AMMINISTRATORE
-- [X] Rimuovere lo scroll interno nelle tabelle, metterle per intero e usare lo scroll della pagina.
-- [X] In Amministratore, non viene mostrato nulla se c'è un errore nell'inserimento dell'anno. (Problema con scroll behavior smooth se uso anche required e errore è più in alto rispetto a pagina visualizzata)
-
-## GENERALE (FORSE ANCHE MOBILE?)
-- [X] Inserire il link per tornare su all'inizio della pagina.
-- [X] Inserire il link per tornare su all'inizio della pagina in DETTAGLIO AUTO.
-
-## DETTAGLIO AUTO (Emanuele)
-- [X] I title bisognerebbe metterli diversi per ogni auto.
-- [X] (Consiglio della prof) Mostro una delle due immagini dell'auto già in grande e metto la possibilità di sostituirla con l'altra se clicco.
-      (Risposta di Emanuele) eh, grazie, se non avessi perso tutto il tempo a togliere i display none
-
-## HOME (INDEX) (Emanuele)
-- [X] Il Javascript va a modificare lo stile, Rimuovere.
-
-## GENERALE MOBILE (Emanuele)
-- [X] Quando carico la pagina il menu a tendina viene aperto automaticamente. Sistemare e impostare che quando carico la pagina il menu parte da chiuso.
-
-# AGGIORNARE RELAZIONE CON QUESTE MIGLIORIE!
-- [X] (e testarle)
-- [X] aggiunte di cursor pointer (select e immagini in dettaglio)
-- [X] spiegare back to top (e scorciatoia Alt+T)
-- [X] spiegare smooth
+## Collegamenti
+[Sito CAA](https://web.math.unipd.it/CAA/)
+[Registrazione della conferenza in Palazzo Bo](https://www.youtube.com/watch?v=hEXfLpDN-J4)
+[Locandina della conferenza in Palazzo Bo](https://web.math.unipd.it/CAA/Locandina-2025.pdf)
